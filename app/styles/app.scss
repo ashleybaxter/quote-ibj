@@ -45,6 +45,7 @@ p {
   background: #2ecc71;
   color: #fff;
   font-weight: bold;
+  border-radius: 0;
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
   text-align: center;
@@ -337,4 +338,8 @@ p {
 
 .clearfix:after {
   clear: both;
+}
+
+.btn.btn--inactive {
+  opacity: 0.5;
 }

@@ -121,8 +121,9 @@
     </div>
   </form>
   <div class="content__footer clearfix">
-    <a class="btn" href="javascript:void(0);">
+    <button {{bind-attr class=":btn isValid::btn--inactive"}} {{action 'save'}}>
       View my quote
-      <i class="ss-navigateright"></i></a>
+      <i class="ss-navigateright"></i>
+    </button>
   </div>
 </section>
