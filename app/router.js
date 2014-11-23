@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('step-2');
   this.route('step-3');
   this.route('step-4');
+  this.route('step-5');
 });
 
 export default Router;

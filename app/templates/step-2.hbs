@@ -1,1 +1,41 @@
-Step 2
+<section class="content">
+  <ul>
+    <li>Step 1</li>
+    <li class="active">Step 2</li>
+    <li>Step 3</li>
+    <li>Step 4</li>
+    <li>Step 5</li>
+  </ul>
+</section>
+<section class="content">
+  <form class="form">
+    <h3>step2: Tell us about your employees</h3>
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        Do you have any employees:
+      </label>
+      <div class="form__control">
+        <input type="radio" name="has_employees" value="yes" id="has_employees_yes" />
+        <label for="has_employees_yes">Yes</label>
+        <input type="radio" name="has_employees" value="no" id="has_employees_no" />
+        <label for="has_employees_no">No</label>
+      </div>
+      <label class="form__group__label">
+        Do you use subcontractors:
+      </label>
+      <div class="form__control">
+        <input type="radio" name="uses_subcontractors" value="yes" id="uses_subcontractors_yes" />
+        <label for="uses_subcontractors_yes">Yes</label>
+        <input type="radio" name="uses_subcontractors" value="no" id="uses_subcontractors_no" />
+        <label for="uses_subcontractors_no">No</label>
+      </div>
+    </div>
+  </form>
+
+  <div class="content__footer clearfix">
+    {{#link-to 'step-3' class='btn'}}
+    Next
+    <i class="ss-navigateright"></i>
+    {{/link-to}}
+  </div>
+</section>

@@ -1,1 +1,40 @@
-Step 1
+<section class="content">
+  <ul>
+    <li class="active">Step 1</li>
+    <li>Step 2</li>
+    <li>Step 3</li>
+    <li>Step 4</li>
+    <li>Step 5</li>
+  </ul>
+</section>
+<section class="content">
+  <form class="form">
+    <h3>step1: Please tell us about your business</h3>
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        Do you have any secondary trade:
+      </label>
+      <div class="form__control">
+        <input type="radio" name="secondary_trade" value="yes" id="secondary_trade_yes" />
+        <label for="secondary_trade_yes">Yes</label>
+        <input type="radio" name="secondary_trade" value="no" id="secondary_trade_no" />
+        <label for="secondary_trade_no">No</label>
+      </div>
+    </div>
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        Business postcode:
+      </label>
+      <div class="form__control">
+        <input />
+      </div>
+    </div>
+  </form>
+
+  <div class="content__footer clearfix">
+    {{#link-to 'step-2' class='btn'}}
+      Next
+      <i class="ss-navigateright"></i>
+    {{/link-to}}
+  </div>
+</section>
