@@ -1,20 +1,23 @@
 import Ember from 'ember';
 
+var isBlank = Ember.isBlank;
+
 export function initialize() {
   // application.inject('route', 'foo', 'service:foo');
   Ember.TextField.reopen({
 
-    focusIn: function () {
-      this.$().addClass('active');
-      this.$().closest('.form__control').addClass('active');
-    },
-    focusOut: function () {
-      this.$().removeClass('active');
-      this.$().closest('.form__control').removeClass('active');
-    }
+    toggleActive: function () {
+      if (isBlank(this.get('value'))) {
+        this.$().removeClass('active');
+        this.$().closest('.form__control').removeClass('active');
+      } else {
+        this.$().addClass('active');
+        this.$().closest('.form__control').addClass('active');
+      }
+    }.observes('value')
 
   });
-};
+}
 
 export default {
   name: 'text-field',
