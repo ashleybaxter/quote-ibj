@@ -33,6 +33,21 @@ p {
   border-radius: 10px;
   position: relative;
 }
+.content--container {
+  background: transparent;
+}
+.content--right {
+  float: right;
+  margin-left: 40px;
+  margin-right: 40px;
+  width: 480px;
+}
+.content--left {
+  float: left;
+  margin-left: 40px;
+  margin-right: 40px;
+  width: 680px;
+}
 .content__footer {
   background: #586272;
   border-bottom-right-radius: 6px;
@@ -55,11 +70,25 @@ p {
     margin-left: 10px;
   }
 }
+.content__footer .btn-two .btn {
+  width: 50%;
+  display: block;
+  float: left;
+}
+.btn--facebook {
+  background: #2e4588!important;
+  width: 100%;
+  display: block;
+  padding: 15px 10px;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+}
 
 
 .form {
   padding: 20px 40px 10px;
-  h1 {
+  h1, h2, h3 {
     margin-bottom: 20px;
     text-align: center;
   }
@@ -96,6 +125,14 @@ p {
   height: 53px;
   color: #666;
   font-size: 14px;
+  &:hover {
+    border: 1px solid #3498DB;
+    background: #3498DB;
+    color: #fff;
+    span, i {
+      color: #fff;
+    }
+  }
   span {
     padding: 15px;
     display: block;
@@ -124,6 +161,14 @@ p {
   border-radius: 6px;
   color: #666;
   font-size: 14px;
+  &:hover {
+    border: 1px solid #3498DB;
+    background: #3498DB;
+    color: #fff;
+    span, i {
+      color: #fff;
+    }
+  }
   span {
     padding: 10px 15px;
     display: block;
@@ -329,6 +374,42 @@ p {
   padding: 8px 0;
   font-size: 18px;
 }
+
+.seporator {
+  margin: 10px 0;
+  font-style: italic;
+  text-align: center;
+  position: relative;
+  &:after {
+    content: '';
+    width: 100%;
+    height: 0;
+    border-bottom: 1px solid #f1f1f1;
+    position: absolute;
+    top: 13px;
+    left: 0;
+    z-index: 9;
+  }
+  span {
+    background: #fff;
+    color: #999;
+    display: inline-block;
+    padding: 0 20px;
+    z-index: 99;
+    position: relative;
+  }
+}
+
+.estimate-table {
+  width: 380px;
+  margin-bottom: 20px;
+}
+.estimate-table__price {
+  width: 230px;
+  text-align: right;
+  padding: 10px 40px 10px 20px;
+}
+
 
 .clearfix:before,
 .clearfix:after {
