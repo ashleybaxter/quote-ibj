@@ -1,0 +1,129 @@
+<section class="content">
+  <form class="form">
+    <h1>Get a Quote</h1>
+    <p class="margin-bottom-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <hr />
+
+    <div class="form__group">
+      <label class="form__group__label">
+        <span class="step-no">1</span>
+        Occupation:
+      </label>
+      <div class="form__control">
+        <div class="btn-group radio-btn-group">
+          {{#btn-group-radio-input groupValue=occupation value="designer"}}
+            <span class="btn__title">
+              <i class="ss-pencilbrush"></i>
+              Designer
+            </span>
+            <span class="btn__msg ss-delete">Awesome choice dude!</span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=occupation value="developer"}}
+            <span class="btn__title">
+              <i class="ss-tools"></i>
+              Developer
+            </span>
+            <span class="btn__msg ss-delete">Building shit is cool!</span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=occupation value="consultant"}}
+            <span class="btn__title">
+              <i class="ss-binoculars"></i>
+              Consultant
+            </span>
+            <span class="btn__msg ss-delete">You go, big boy!</span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=occupation value="other"}}
+            <span class="btn__title">
+              <i class="ss-database"></i>
+              Other
+            </span>
+            <span class="btn__msg ss-delete">Dropdown here</span>
+          {{/btn-group-radio-input}}
+        </div>
+      </div>
+    </div>
+
+    <div class="form__group">
+      <label class="form__group__label">
+        <span class="step-no">2</span>
+        Experience:
+      </label>
+      <div class="form__control">
+        <div class="btn-group radio-btn-group">
+          {{#btn-group-radio-input groupValue=experience value="<1"}}
+            <span class="btn__title">
+              <i class="ss-home"></i>
+              1 year or less
+            </span>
+            <span class="btn__msg ss-delete">You're just getting started and thats great!</span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=experience value="1-3"}}
+            <span class="btn__title">
+              <i class="ss-school"></i>
+              1-3 years
+            </span>
+            <span class="btn__msg ss-delete">Looks like everything is going well!</span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=experience value="3-5"}}
+            <span class="btn__title">
+              <i class="ss-warehouse"></i>
+              3-5 years
+            </span>
+            <span class="btn__msg ss-delete">I see you've experience at this</span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=experience value=">5"}}
+            <span class="btn__title">
+              <i class="ss-castle"></i>
+              5 years +
+            </span>
+            <span class="btn__msg ss-delete">Woah, long time, awesome!</span>
+          {{/btn-group-radio-input}}
+        </div>
+      </div>
+    </div>
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        <span class="step-no">3</span>
+        Business Type:
+      </label>
+      <div class="form__control">
+        <div class="radio-btn-group">
+          {{#btn-group-radio-input groupValue=businessType value="one" classNames="btn--large"}}
+            <span class="btn__title">
+              <i class="ss-school"></i>
+              1-3 years
+            </span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=businessType value="two" classNames="btn--large"}}
+            <span class="btn__title">
+              <i class="ss-school"></i>
+              1-3 years
+            </span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=businessType value="three" classNames="btn--large"}}
+            <span class="btn__title">
+              <i class="ss-school"></i>
+              1-3 years
+            </span>
+          {{/btn-group-radio-input}}
+        </div>
+      </div>
+    </div>
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        <span class="step-no">4</span>
+        Sum Insured For:
+      </label>
+      <div class="form__control">
+        <div class="input-price">£</div>
+        {{input type="text" value=sumInsured placeholder="How much insurance are you looking for?"}}
+      </div>
+    </div>
+  </form>
+  <div class="content__footer clearfix">
+    <button {{bind-attr class=":btn isValid::btn--inactive"}} {{action 'save'}}>
+      View my quote
+      <i class="ss-navigateright"></i>
+    </button>
+  </div>
+</section>
