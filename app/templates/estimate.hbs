@@ -1,1 +1,66 @@
-Estimate
+<section class="content content--left content--container">
+  <h1>Title for estimate here</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+  <table class="estimate-table">
+    <tr>
+      <td class="estimate-table__price">Anual price including insurance permium Tax (IPT)</td>
+      <td>
+        <h2>£69.99</h2>
+      </td>
+    </tr>
+    <tr>
+      <td class="estimate-table__price">Public liability</td>
+      <td>£1,000,000</td>
+    </tr>
+    <tr>
+      <td class="estimate-table__price">Employers liability</td>
+      <td>Not included</td>
+    </tr>
+    <tr>
+      <td class="estimate-table__price">Professional indemnity</td>
+      <td>Not included</td>
+    </tr>
+  </table>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+</section>
+<section class="content content--right">
+  <form class="form">
+    <h3>Apply</h3>
+    {{#link-to 'step-1' class="btn btn--facebook"}}
+      Connect with Facebook
+    {{/link-to}}
+    <div class="seporator">
+      <span>or</span>
+    </div>
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        Name:
+      </label>
+      <div class="form__control">
+        <input placeholder="" />
+      </div>
+    </div>
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        Email:
+      </label>
+      <div class="form__control">
+        <input />
+      </div>
+    </div>
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        Phone number:
+      </label>
+      <div class="form__control">
+        <input />
+      </div>
+    </div>
+  </form>
+  <div class="content__footer clearfix">
+    {{#link-to 'step-1' class="btn"}}
+      Apply
+      <i class="ss-navigateright"></i>
+    {{/link-to}}
+  </div>
+</section>
