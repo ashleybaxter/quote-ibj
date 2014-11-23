@@ -1,6 +1,9 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+
+  title: "Get a Quote",
+
   actions: {
     save: function () {
       if (!this.controller.get('isValid')) {
@@ -9,5 +12,6 @@ export default Ember.Route.extend({
         this.transitionTo('estimate');
       }
     }
-  },
+  }
+  
 });
