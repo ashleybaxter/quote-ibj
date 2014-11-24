@@ -114,9 +114,14 @@
         <span class="step-no">4</span>
         Sum Insured For:
       </label>
-      <div class="form__control">
+      <div {{bind-attr class=":form__control isSumInvalid:form__control--invalid"}}>
         <div class="input-price">£</div>
         {{input type="text" value=sumInsured placeholder="How much insurance are you looking for?"}}
+        {{#if isSumInvalid}}
+          <div class="form__control__error">
+            You must enter a number
+          </div>
+        {{/if}}
       </div>
     </div>
   </form>
