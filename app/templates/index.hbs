@@ -114,16 +114,64 @@
     <div class="form__group form__group--large">
       <label class="form__group__label">
         <span class="step-no">4</span>
-        Sum Insured For:
+        How many employees do you have?
       </label>
-      <div {{bind-attr class=":form__control isSumInvalid:form__control--invalid"}}>
-        <div class="input-price">£</div>
-        {{input type="text" value=sumInsured placeholder="How much insurance are you looking for?"}}
-        {{#if isSumInvalid}}
+      <div {{bind-attr class=":form__control isNumberOfEmployeesValid:form__control--invalid"}}>
+        <div class="input-price"><i class="ss-malefemale"></i></div>
+        {{input type="text" value=numberOfEmployees placeholder=""}}
+        {{#unless isNumberOfEmployeesValid}}
           <div class="form__control__error">
             You must enter a number
           </div>
-        {{/if}}
+        {{/unless}}
+      </div>
+    </div>
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        <span class="step-no">5</span>
+        Sum insured for Public Liability:
+      </label>
+      <div {{bind-attr class=":form__control isPublicLiabilityValid:form__control--invalid"}}>
+        <div class="input-price">£</div>
+        {{input type="text" value=publicLiability placeholder="How much insurance are you looking for?"}}
+        {{input type="range" value=publicLiability min=1000 max=1000000 step=1000}}
+        {{#unless isPublicLiabilityValid}}
+          <div class="form__control__error">
+            You must enter a number
+          </div>
+        {{/unless}}
+      </div>
+    </div>
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        <span class="step-no">6</span>
+        Sum insured for Employers Liability:
+      </label>
+      <div {{bind-attr class=":form__control isEmployersLiabilityValid:form__control--invalid"}}>
+        <div class="input-price">£</div>
+        {{input type="text" value=employersLiability placeholder="How much insurance are you looking for?"}}
+        {{input type="range" value=employersLiability min=1000 max=1000000 step=1000}}
+        {{#unless isEmployersLiabilityValid}}
+          <div class="form__control__error">
+            You must enter a number
+          </div>
+        {{/unless}}
+      </div>
+    </div>
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        <span class="step-no">7</span>
+        Sum insured for Professional Indemnity:
+      </label>
+      <div {{bind-attr class=":form__control isProfessionalIndemnityValid:form__control--invalid"}}>
+        <div class="input-price">£</div>
+        {{input type="text" value=professionalIndemnity placeholder="How much insurance are you looking for?"}}
+        {{input type="range" value=professionalIndemnity min=1000 max=1000000 step=1000}}
+        {{#unless isProfessionalIndemnityValid}}
+          <div class="form__control__error">
+            You must enter a number
+          </div>
+        {{/unless}}
       </div>
     </div>
   </form>

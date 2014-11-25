@@ -311,6 +311,9 @@ p {
     outline: 0;
   }
 }
+.form__control input[type="range"] {
+  padding: 0;
+}
 .input-price {
   content: '£';
   position: absolute;
