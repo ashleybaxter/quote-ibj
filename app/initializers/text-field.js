@@ -14,7 +14,11 @@ export function initialize() {
         this.$().addClass('active');
         this.$().closest('.form__control').addClass('active');
       }
-    }.observes('value')
+    }.observes('value'),
+
+    toggleActiveForInitialValue: function () {
+      this.toggleActive()
+    }.on('didInsertElement')
 
   });
 }
