@@ -5,20 +5,38 @@
     <tr>
       <td class="estimate-table__price">Anual price including insurance permium Tax (IPT)</td>
       <td>
-        <h2>£69.99</h2>
+        <h2>£{{quoteTotal}}</h2>
       </td>
     </tr>
     <tr>
       <td class="estimate-table__price">Public liability</td>
-      <td>£1,000,000</td>
+      <td>
+        {{#if publicLiability}}
+          £{{publicLiability}}
+        {{else}}
+          Not included
+        {{/if}}
+      </td>
     </tr>
     <tr>
       <td class="estimate-table__price">Employers liability</td>
-      <td>Not included</td>
+      <td>
+        {{#if employersLiability}}
+          £{{employersLiability}}
+        {{else}}
+          Not included
+        {{/if}}
+      </td>
     </tr>
     <tr>
       <td class="estimate-table__price">Professional indemnity</td>
-      <td>Not included</td>
+      <td>
+        {{#if professionalIndemnity}}
+          £{{professionalIndemnity}}
+        {{else}}
+          Not included
+        {{/if}}
+      </td>
     </tr>
   </table>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
