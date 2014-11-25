@@ -8,14 +8,15 @@ export default Ember.Component.extend({
 
   classNames: ['btn', 'clearfix'],
 
-  click: function() {
-    if (this.get('checked')) {
-      this.set('groupValue', null);
-    } else {
-      this.set('groupValue', this.get('value'));
+  deferClick: false,
+
+  click: function () {
+    if (!this.get('deferClick')) {
+      if (this.$().prop('checked')) {
+        this.set('groupValue', null);
+        this.$().prop('checked', false);
+      }
     }
-    Ember.run.once(this, function() { this.$().trigger('change'); });
-    return false;
   },
 
   checked: function () {
@@ -38,7 +39,19 @@ export default Ember.Component.extend({
   change: function () {
     var active = !Ember.isBlank(this.get('groupValue'));
     this.$().closest('.form__control').toggleClass('active', active);
+
+    if (this.$().prop('checked')) {
+      this.set('groupValue', this.get('value'));
+    }
+
     Ember.run.once(this, 'checked'); // manual observer
+
+    // don't trigger our click handler if the value has just changed
+    // as Chrome fires change event before click event
+    this.set('deferClick', true);
+    Ember.run.next(this, function () {
+      this.set('deferClick', false);
+    });
   }
 
 });
