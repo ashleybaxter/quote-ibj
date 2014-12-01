@@ -131,10 +131,14 @@
         <span class="step-no">5</span>
         Sum insured for Public Liability:
       </label>
-      <div {{bind-attr class=":form__control isPublicLiabilityValid:form__control--invalid"}}>
-        <div class="input-price">£</div>
-        {{input type="text" value=publicLiability placeholder="How much insurance are you looking for?"}}
-        {{input type="range" value=publicLiability min=1000 max=1000000 step=1000}}
+      <div {{bind-attr class=":form__control isPublicLiabilityValid:form__control--invalid :clearfix"}}>
+        <div class="form__control__left">
+          <div class="input-price">£</div>
+          {{input type="text" value=publicLiability placeholder="Amount"}}
+        </div>
+        <div class="form__control__right">
+          {{input type="range" class="input-range" value=publicLiability min=1000 max=1000000 step=1000}}
+        </div>
         {{#unless isPublicLiabilityValid}}
           <div class="form__control__error">
             You must enter a number
@@ -147,10 +151,14 @@
         <span class="step-no">6</span>
         Sum insured for Employers Liability:
       </label>
-      <div {{bind-attr class=":form__control isEmployersLiabilityValid:form__control--invalid"}}>
-        <div class="input-price">£</div>
-        {{input type="text" value=employersLiability placeholder="How much insurance are you looking for?"}}
-        {{input type="range" value=employersLiability min=1000 max=1000000 step=1000}}
+      <div {{bind-attr class=":form__control isEmployersLiabilityValid:form__control--invalid :clearfix"}}>
+        <div class="form__control__left">
+          <div class="input-price">£</div>
+          {{input type="text" value=employersLiability placeholder="Amount"}}
+        </div>
+        <div class="form__control__right">
+          {{input type="range" value=employersLiability min=1000 max=1000000 step=1000}}
+        </div>
         {{#unless isEmployersLiabilityValid}}
           <div class="form__control__error">
             You must enter a number
@@ -163,10 +171,14 @@
         <span class="step-no">7</span>
         Sum insured for Professional Indemnity:
       </label>
-      <div {{bind-attr class=":form__control isProfessionalIndemnityValid:form__control--invalid"}}>
-        <div class="input-price">£</div>
-        {{input type="text" value=professionalIndemnity placeholder="How much insurance are you looking for?"}}
-        {{input type="range" value=professionalIndemnity min=1000 max=1000000 step=1000}}
+      <div {{bind-attr class=":form__control isProfessionalIndemnityValid:form__control--invalid :clearfix"}}>
+        <div class="form__control__left">
+          <div class="input-price">£</div>
+          {{input type="text" value=professionalIndemnity placeholder="Amount"}}
+        </div>
+        <div class="form__control__right">
+          {{input type="range" value=professionalIndemnity min=1000 max=1000000 step=1000}}
+        </div>
         {{#unless isProfessionalIndemnityValid}}
           <div class="form__control__error">
             You must enter a number

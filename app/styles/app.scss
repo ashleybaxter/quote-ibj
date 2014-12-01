@@ -309,6 +309,7 @@ p {
   &:focus {
     box-shadow: none;
     outline: 0;
+    border: 1px solid #ccc;
   }
 }
 .form__control input[type="range"] {
@@ -359,6 +360,9 @@ p {
     &:after, &:before {
       border-color: rgba(204, 204, 204, 0);
       border-left-color: #3498DB;
+    }
+    &:focus {
+      border: 1px solid #3498DB!important;
     }
   }
 }
@@ -426,4 +430,68 @@ p {
 
 .btn.btn--inactive {
   opacity: 0.5;
+}
+
+
+.form__control__error {
+  color: red;
+  margin-top: -5px;
+}
+
+.form__control .form__control__left {
+  width: 170px;
+  float: left;
+  position: relative;
+  input {
+    border-radius: 0;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px; 
+  }
+}
+.form__control__right {
+  width: 430px;
+  float: right;
+  position: relative;
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px; 
+  border: 1px solid #ccc;
+  box-shadow: none;
+  background: #f1f1f1;
+  padding: 20px 15px;
+  border-left: 0;
+}
+
+
+
+
+
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 100%; /* Specific width is required for Firefox. */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 26px;
+  width: 26px;
+  border-radius: 30px;
+  background: #3498DB;
+  cursor: pointer;
+  margin-top: -10px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  cursor: pointer;
+  background: darken(#f1f1f1, 10%);
+  border-radius: 1.3px;
+  border: 0;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  
 }
