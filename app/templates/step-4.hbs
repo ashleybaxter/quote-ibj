@@ -78,7 +78,7 @@
         Legal Expenses 
       </label>
       <div class="form__control">
-        <div class="btn-group radio-btn-group">
+        <div class="btn-group radio-btn-group radio-btn-group--half">
           {{#btn-group-radio-input groupValue=subs value="Yes Sub"}}
             <span class="btn__title">
               <i class="ss-database"></i>
@@ -121,6 +121,64 @@
         </div>
       </div>
     </div>
+
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        <span class="step-no">7</span>
+        Select how much it would cost to rebuild your property from scratch
+      </label>
+      <div {{bind-attr class=":form__control isRebuildCostsValid:form__control--invalid :clearfix"}}>
+        <div class="form__control__left">
+          <div class="input-price">£</div>
+          {{input type="text" value=RebuildCosts placeholder="Amount"}}
+        </div>
+        <div class="form__control__right">
+          {{input type="range" value=RebuildCosts min=1000 max=1000000 step=1000}}
+        </div>
+      </div>
+    </div>
+
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        <span class="step-no">2</span>
+        Business / Office Equipment
+      </label>
+      <div class="form__control">
+        <div class="btn-group radio-btn-group radio-btn-group--half">
+          {{#btn-group-radio-input groupValue=office value="Yes Sub"}}
+            <span class="btn__title">
+              <i class="ss-database"></i>
+                Include this cover
+            </span>
+            <span class="btn__msg ss-delete">No problem!</span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=office value="No Sub"}}
+            <span class="btn__title">
+              <i class="ss-database"></i>
+                Don't include this cover
+            </span>
+            <span class="btn__msg ss-delete">No problem!</span>
+          {{/btn-group-radio-input}}
+        </div>
+      </div>
+    </div>
+
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        <span class="step-no">7</span>
+        Select how much it would cost to replace all of your business / office equipment.
+      </label>
+      <div {{bind-attr class=":form__control isOfficeCostsValid:form__control--invalid :clearfix"}}>
+        <div class="form__control__left">
+          <div class="input-price">£</div>
+          {{input type="text" value=OfficeCosts placeholder="Amount"}}
+        </div>
+        <div class="form__control__right">
+          {{input type="range" value=OfficeCosts min=1000 max=1000000 step=1000}}
+        </div>
+      </div>
+    </div>
+
   </form>
 
   <div class="content__footer clearfix">
