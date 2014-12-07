@@ -210,6 +210,16 @@ p {
     }
   }
 }
+.radio-btn-group--third {
+  .btn {
+    width: 33.333%;
+  }
+}
+.radio-btn-group--half {
+  .btn {
+    width: 50%%;
+  }
+}
 .btn-group.active {
   .btn {
     display: none;

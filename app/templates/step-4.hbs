@@ -8,128 +8,117 @@
   </ul>
 </section>
 <section class="content">
-  <h3>step4: cover options</h3>
   <form class="form">
-    <div class="form__group">
+    <h3>Please choose the covers you need</h3>
+    
+    <div class="form__group form__group--large">
       <label class="form__group__label">
-        <span class="step-no">1</span>
-        Occupation:
+        <span class="step-no">5</span>
+        Sum insured for Public Liability:
+      </label>
+      <div {{bind-attr class=":form__control isPublicLiabilityValid:form__control--invalid :clearfix"}}>
+        <div class="form__control__left">
+          <div class="input-price">£</div>
+          {{input type="text" value=publicLiability placeholder="Amount"}}
+        </div>
+        <div class="form__control__right">
+          {{input type="range" class="input-range" value=publicLiability min=1000 max=1000000 step=1000}}
+        </div>
+        {{#unless isPublicLiabilityValid}}
+          <div class="form__control__error">
+            You must enter a number
+          </div>
+        {{/unless}}
+      </div>
+    </div>
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        <span class="step-no">6</span>
+        Sum insured for Employers Liability:
+      </label>
+      <div {{bind-attr class=":form__control isEmployersLiabilityValid:form__control--invalid :clearfix"}}>
+        <div class="form__control__left">
+          <div class="input-price">£</div>
+          {{input type="text" value=employersLiability placeholder="Amount"}}
+        </div>
+        <div class="form__control__right">
+          {{input type="range" value=employersLiability min=1000 max=1000000 step=1000}}
+        </div>
+        {{#unless isEmployersLiabilityValid}}
+          <div class="form__control__error">
+            You must enter a number
+          </div>
+        {{/unless}}
+      </div>
+    </div>
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        <span class="step-no">7</span>
+        Sum insured for Professional Indemnity:
+      </label>
+      <div {{bind-attr class=":form__control isProfessionalIndemnityValid:form__control--invalid :clearfix"}}>
+        <div class="form__control__left">
+          <div class="input-price">£</div>
+          {{input type="text" value=professionalIndemnity placeholder="Amount"}}
+        </div>
+        <div class="form__control__right">
+          {{input type="range" value=professionalIndemnity min=1000 max=1000000 step=1000}}
+        </div>
+        {{#unless isProfessionalIndemnityValid}}
+          <div class="form__control__error">
+            You must enter a number
+          </div>
+        {{/unless}}
+      </div>
+    </div>
+
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        <span class="step-no">2</span>
+        Legal Expenses 
       </label>
       <div class="form__control">
         <div class="btn-group radio-btn-group">
-          {{#btn-group-radio-input groupValue=occupation value="designer"}}
-            <span class="btn__title">
-              <i class="ss-pencilbrush"></i>
-              Designer
-            </span>
-            <span class="btn__msg ss-delete">Awesome choice dude!</span>
-          {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=occupation value="developer"}}
-            <span class="btn__title">
-              <i class="ss-tools"></i>
-              Developer
-            </span>
-            <span class="btn__msg ss-delete">Building shit is cool!</span>
-          {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=occupation value="consultant"}}
-            <span class="btn__title">
-              <i class="ss-binoculars"></i>
-              Consultant
-            </span>
-            <span class="btn__msg ss-delete">You go, big boy!</span>
-          {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=occupation value="other"}}
+          {{#btn-group-radio-input groupValue=subs value="Yes Sub"}}
             <span class="btn__title">
               <i class="ss-database"></i>
-              Other
+               £100,000
             </span>
-            <span class="btn__msg ss-delete">
-              {{input type="text" value=otherOccupation}}
+            <span class="btn__msg ss-delete">No problem!</span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=subs value="No Sub"}}
+            <span class="btn__title">
+              <i class="ss-database"></i>
+               Not required
             </span>
+            <span class="btn__msg ss-delete">No problem!</span>
           {{/btn-group-radio-input}}
         </div>
       </div>
     </div>
 
-    <div class="form__group">
+    <div class="form__group form__group--large">
       <label class="form__group__label">
         <span class="step-no">2</span>
-        Experience:
+        Building
       </label>
       <div class="form__control">
-        <div class="btn-group radio-btn-group">
-          {{#btn-group-radio-input groupValue=experience value="<1"}}
+        <div class="btn-group radio-btn-group radio-btn-group--half">
+          {{#btn-group-radio-input groupValue=building value="Yes Sub"}}
             <span class="btn__title">
-              <i class="ss-home"></i>
-              1 year or less
+              <i class="ss-database"></i>
+                Include this cover
             </span>
-            <span class="btn__msg ss-delete">You're just getting started and thats great!</span>
+            <span class="btn__msg ss-delete">No problem!</span>
           {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=experience value="1-3"}}
+          {{#btn-group-radio-input groupValue=building value="No Sub"}}
             <span class="btn__title">
-              <i class="ss-school"></i>
-              1-3 years
+              <i class="ss-database"></i>
+                Don't include this cover
             </span>
-            <span class="btn__msg ss-delete">Looks like everything is going well!</span>
-          {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=experience value="3-5"}}
-            <span class="btn__title">
-              <i class="ss-warehouse"></i>
-              3-5 years
-            </span>
-            <span class="btn__msg ss-delete">I see you've experience at this</span>
-          {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=experience value=">5"}}
-            <span class="btn__title">
-              <i class="ss-castle"></i>
-              5 years +
-            </span>
-            <span class="btn__msg ss-delete">Woah, long time, awesome!</span>
+            <span class="btn__msg ss-delete">No problem!</span>
           {{/btn-group-radio-input}}
         </div>
-      </div>
-    </div>
-    <div class="form__group form__group--large">
-      <label class="form__group__label">
-        <span class="step-no">3</span>
-        Business Type:
-      </label>
-      <div class="form__control">
-        <div class="radio-btn-group">
-          {{#btn-group-radio-input groupValue=businessType value="one" classNames="btn--large"}}
-            <span class="btn__title">
-              <i class="ss-school"></i>
-              1-3 years
-            </span>
-          {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=businessType value="two" classNames="btn--large"}}
-            <span class="btn__title">
-              <i class="ss-school"></i>
-              1-3 years
-            </span>
-          {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=businessType value="three" classNames="btn--large"}}
-            <span class="btn__title">
-              <i class="ss-school"></i>
-              1-3 years
-            </span>
-          {{/btn-group-radio-input}}
-        </div>
-      </div>
-    </div>
-    <div class="form__group form__group--large">
-      <label class="form__group__label">
-        <span class="step-no">4</span>
-        Sum Insured For:
-      </label>
-      <div {{bind-attr class=":form__control isSumInvalid:form__control--invalid"}}>
-        <div class="input-price">£</div>
-        {{input type="text" value=sumInsured placeholder="How much insurance are you looking for?"}}
-        {{#if isSumInvalid}}
-        <div class="form__control__error">
-          You must enter a number
-        </div>
-        {{/if}}
       </div>
     </div>
   </form>

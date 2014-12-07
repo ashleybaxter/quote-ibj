@@ -9,27 +9,60 @@
 </section>
 <section class="content">
   <form class="form">
-    <h3>step2: Tell us about your employees</h3>
+    <h3>Tell us about your employees</h3>
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        Do you have any employees:
+        <span class="step-no">1</span>
+        How many employees do you have?
       </label>
-      <div class="form__control">
-        <input type="radio" name="has_employees" value="yes" id="has_employees_yes" />
-        <label for="has_employees_yes">Yes</label>
-        <input type="radio" name="has_employees" value="no" id="has_employees_no" />
-        <label for="has_employees_no">No</label>
-      </div>
-      <label class="form__group__label">
-        Do you use subcontractors:
-      </label>
-      <div class="form__control">
-        <input type="radio" name="uses_subcontractors" value="yes" id="uses_subcontractors_yes" />
-        <label for="uses_subcontractors_yes">Yes</label>
-        <input type="radio" name="uses_subcontractors" value="no" id="uses_subcontractors_no" />
-        <label for="uses_subcontractors_no">No</label>
+      <div {{bind-attr class=":form__control isNumberOfEmployeesValid:form__control--invalid"}}>
+        <div class="input-price"><i class="ss-malefemale"></i></div>
+        {{input type="text" value=numberOfEmployees placeholder=""}}
       </div>
     </div>
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        <span class="step-no">2</span>
+        Do you use bona fide subcontractors?
+      </label>
+      <div class="form__control">
+        <div class="btn-group radio-btn-group">
+          {{#btn-group-radio-input groupValue=subs value="Yes Sub"}}
+            <span class="btn__title btn__title--input">
+              <i class="ss-database"></i>
+              Yes
+            </span>
+            <span class="btn__msg btn__input ss-delete">
+              {{input type="text" placeholder="How many subcontractors will be onsite at any one time?" value=othersubs}}
+            </span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=subs value="No Sub"}}
+            <span class="btn__title">
+              <i class="ss-tools"></i>
+              No
+            </span>
+            <span class="btn__msg ss-delete">No problem!</span>
+          {{/btn-group-radio-input}}
+        </div>
+      </div>
+    </div>
+
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        <span class="step-no">3</span>
+        What percentage of your turnover relates to payments to bona fide subcontractors?
+      </label>
+      <div {{bind-attr class=":form__control isEmployersLiabilityValid:form__control--invalid :clearfix"}}>
+        <div class="form__control__left">
+          <div class="input-price">%</div>
+          {{input type="text" value=employersLiability placeholder="Amount"}}
+        </div>
+        <div class="form__control__right">
+          {{input type="range" value=employersLiability min=5 max=100 step=5}}
+        </div>
+      </div>
+    </div>
+
   </form>
 
   <div class="content__footer clearfix">
