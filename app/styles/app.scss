@@ -67,15 +67,22 @@ p {
   border-bottom-left-radius: 6px;
   text-align: center;
   vertical-align: middle;
+  @include transition(all 0.2s ease-in-out);
   i {
     vertical-align: middle;
     margin-left: 10px;
   }
-}
-.content__footer .btn-two .btn {
-  width: 50%;
-  display: block;
-  float: left;
+  &:hover {
+    background: darken(#2ecc71, 5%);
+  }
+  &:active {
+    background: darken(#2ecc71, 8%);
+  }
+  &.btn--inactive {
+    background: darken(#ccc, 3%);
+    cursor: not-allowed;
+    color: lighten(#ccc, 10%);
+  }
 }
 .btn--facebook {
   background: #2e4588!important;
@@ -193,7 +200,7 @@ p {
 
 .btn-group {
   position: relative;
-  height: 48px;
+  height: 52px;
   .btn {
     float: left;
     display: block;
@@ -244,6 +251,9 @@ p {
   border-radius: 6px;
   background: #3498DB;
   color: #fff;
+  &:hover {
+    background: lighten(#3498DB, 5%);
+  }
   .btn__title {
     font-weight: bold;
     position: relative;
@@ -276,6 +286,9 @@ p {
   border: 1px solid #3498DB;
   background: #3498DB;
   opacity: 1;
+  &:hover {
+    background: lighten(#3498DB, 5%);
+  }
   span, i {
     color: #fff;
     font-weight: bold;
@@ -322,8 +335,9 @@ p {
   position: relative;
   &:focus {
     box-shadow: none;
-    outline: 0;
+    outline: 1;
     border: 1px solid #ccc;
+    background: darken(#f1f1f1, 3%);
   }
 }
 .form__control input[type="range"] {
@@ -442,10 +456,6 @@ p {
   clear: both;
 }
 
-.btn.btn--inactive {
-  opacity: 0.5;
-}
-
 
 .form__control__error {
   color: red;
@@ -537,6 +547,12 @@ input[type=range]::-webkit-slider-thumb {
   background: #3498DB;
   cursor: pointer;
   margin-top: -10px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
+  &:hover {
+    background: darken(#3498DB, 3%);
+  }
+  &:active {
+    background: darken(#3498DB, 7%);
+  }
 }
 input[type=range]::-webkit-slider-runnable-track {
   width: 100%;

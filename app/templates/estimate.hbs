@@ -52,26 +52,29 @@
     </div>
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        Name:
+        Whats your full name?
       </label>
-      <div class="form__control">
-        <input placeholder="" />
+      <div {{bind-attr class=":form__control"}}>
+        <div class="input-price"><i class="ss-malefemale"></i></div>
+        {{input type="text" value=name placeholder="Bruce Wayne"}}
       </div>
     </div>
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        Email:
+        Whats your email?
       </label>
-      <div class="form__control">
-        <input />
+      <div {{bind-attr class=":form__control"}}>
+        <div class="input-price"><i class="ss-mail"></i></div>
+        {{input type="text" value=email placeholder="bruce@wayneenterprises.com"}}
       </div>
     </div>
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        Phone number:
+        Whats your phone number?
       </label>
-      <div class="form__control">
-        <input />
+      <div {{bind-attr class=":form__control"}}>
+        <div class="input-price"><i class="ss-phone"></i></div>
+        {{input type="text" value=phone placeholder="0800 000 000"}}
       </div>
     </div>
   </form>

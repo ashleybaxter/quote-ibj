@@ -1,0 +1,18 @@
+.form__control {
+  position: relative;
+}
+.form__control input {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  box-shadow: none;
+  background: #f1f1f1;
+  padding: 16px 15px;
+  padding-left: 80px;
+  position: relative;
+  &:focus {
+    box-shadow: none;
+    outline: 0;
+    border: 1px solid #ccc;
+  }
+}
