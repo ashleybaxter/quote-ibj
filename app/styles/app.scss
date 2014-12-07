@@ -89,9 +89,27 @@ p {
   width: 100%;
   display: block;
   padding: 15px 10px;
+  position: relative;
   color: #fff;
   text-align: center;
   border-radius: 6px;
+  @include transition(all 0.2s ease-in-out);
+  &:hover {
+    color: #fff;
+    background: darken(#2e4588, 3%)!important;
+  }
+  .input-price {
+    color: #fff;
+    background: transparent;
+    border: 0;
+    top: 0;
+    height: 54px;
+    padding-top: 13px;
+    border-right: 1px solid lighten(#2e4588, 5%);
+    &:before, &:after {
+      display: none;
+    }
+  }
 }
 
 
@@ -433,6 +451,13 @@ p {
     z-index: 99;
     position: relative;
   }
+}
+
+.btn-subtext {
+  text-align: center;
+  font-size: 13px;
+  color: #666;
+  padding: 5px 0;
 }
 
 .estimate-table {
