@@ -64,6 +64,10 @@ export default Ember.Component.extend({
       active = false;
     }
     this.$().closest('.form__control').toggleClass('active', active);
-  }
+  },
+
+  updateActiveOnInsert: function () {
+    Ember.run.next(this, this.updateActive);
+  }.on('didInsertElement')
 
 });
