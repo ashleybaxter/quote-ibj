@@ -486,8 +486,10 @@ p {
 
 
 .form__control__error {
+  clear: both;
+  position: relative;
+  top: -5px;
   color: red;
-  margin-top: -5px;
 }
 
 .form__control .form__control__left {
