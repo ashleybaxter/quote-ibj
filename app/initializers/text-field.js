@@ -17,7 +17,7 @@ export function initialize() {
     }.observes('value'),
 
     toggleActiveForInitialValue: function () {
-      this.toggleActive()
+      this.toggleActive();
     }.on('didInsertElement')
 
   });
