@@ -44,14 +44,21 @@
 <section class="content content--right">
   <form class="form">
     <h3>Apply</h3>
-    {{#link-to 'step-1' class="btn btn--facebook"}}
-      <div class="input-price"><i class="ss-settings"></i></div>
-      <span>Connect with Facebook</span>
-    {{/link-to}}
-    <div class="btn-subtext">And we'll pull in your relevent info automaticaly</div>
-    <div class="seporator">
-      <span>or</span>
-    </div>
+    {{#unless facebookConnected}}
+      <a href="#" class="btn btn--facebook" {{action 'facebookConnect'}}>
+        <div class="input-price"><i class="ss-settings"></i></div>
+        <span>Connect with Facebook</span>
+      </a>
+      <div class="btn-subtext">And we'll pull in your relevent info automaticaly</div>
+      <div class="seporator">
+        <span>or</span>
+      </div>
+    {{else}}
+      <div class="btn-subtext">Awesome! We've got your details all ready to go...</div>
+      <div class="seporator clearfix">
+        <span></span>
+      </div>
+    {{/unless}}
     <div class="form__group form__group--large">
       <label class="form__group__label">
         Whats your full name?
@@ -76,7 +83,7 @@
       </label>
       <div {{bind-attr class=":form__control"}}>
         <div class="input-price"><i class="ss-phone"></i></div>
-        {{input type="text" value=phone placeholder="0800 000 000"}}
+        {{input type="text" value=phoneNumber placeholder="0800 000 000"}}
       </div>
     </div>
   </form>
