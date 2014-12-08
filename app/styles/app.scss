@@ -264,22 +264,8 @@ p {
   top: 0;
   width: 100%;
   z-index: 50;
-  border: 1px solid #3498DB;
   border-left: 0;
   border-radius: 6px;
-  background: #3498DB;
-  color: #fff;
-  &:hover {
-    background: lighten(#3498DB, 5%);
-  }
-  .btn__title {
-    font-weight: bold;
-    position: relative;
-    color: #fff;
-  }
-  i {
-    color: #fff;
-  }
   .btn__msg {
     display: inline-block;
     font-weight: normal;
@@ -295,6 +281,23 @@ p {
 .form__control.active {
   .btn--large {
     opacity: 0.4;
+  }
+  .btn-group input + label {
+    border: 1px solid #3498DB;
+    border-radius: 6px;
+    background: #3498DB;
+    color: #fff;
+    .btn__title {
+      font-weight: bold;
+      position: relative;
+      color: #fff;
+    }
+    i {
+      color: #fff;
+    }
+    &:hover {
+      background: lighten(#3498DB, 5%);
+    }
   }
 }
 
@@ -494,7 +497,7 @@ p {
   input {
     border-radius: 0;
     border-top-left-radius: 6px;
-    border-bottom-left-radius: 6px; 
+    border-bottom-left-radius: 6px;
   }
 }
 .form__control__right {
@@ -502,7 +505,7 @@ p {
   float: right;
   position: relative;
   border-top-right-radius: 6px;
-  border-bottom-right-radius: 6px; 
+  border-bottom-right-radius: 6px;
   border: 1px solid #ccc;
   box-shadow: none;
   background: #f1f1f1;
@@ -589,5 +592,5 @@ input[type=range]::-webkit-slider-runnable-track {
 }
 
 input[type=range]:focus::-webkit-slider-runnable-track {
-  
+
 }

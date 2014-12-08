@@ -16,6 +16,7 @@ export default Ember.Component.extend({
         this.set('groupValue', null);
         this.$().prop('checked', false);
       }
+      this.updateActive();
     }
   },
 
@@ -37,12 +38,11 @@ export default Ember.Component.extend({
   }.property(),
 
   change: function () {
-    var active = !Ember.isBlank(this.get('groupValue'));
-    this.$().closest('.form__control').toggleClass('active', active);
-
     if (this.$().prop('checked')) {
       this.set('groupValue', this.get('value'));
     }
+
+    this.updateActive();
 
     Ember.run.once(this, 'checked'); // manual observer
 
@@ -52,6 +52,14 @@ export default Ember.Component.extend({
     Ember.run.next(this, function () {
       this.set('deferClick', false);
     });
+  },
+
+  updateActive: function () {
+    var active = !Ember.isBlank(this.get('groupValue'));
+    if (this.get('groupValue') === 'other') {
+      active = false;
+    }
+    this.$().closest('.form__control').toggleClass('active', active);
   }
 
 });
