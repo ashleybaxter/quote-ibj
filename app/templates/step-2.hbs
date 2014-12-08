@@ -10,6 +10,7 @@
 <section class="content">
   <form class="form">
     <h3>Tell us about your employees</h3>
+    
     <div class="form__group form__group--large">
       <label class="form__group__label">
         <span class="step-no">1</span>
@@ -20,6 +21,7 @@
         {{input type="text" value=numberOfEmployees placeholder=""}}
       </div>
     </div>
+
     <div class="form__group form__group--large">
       <label class="form__group__label">
         <span class="step-no">2</span>
@@ -27,16 +29,16 @@
       </label>
       <div class="form__control">
         <div class="btn-group radio-btn-group radio-btn-group--half">
-          {{#btn-group-radio-input groupValue=subs value="Yes Sub"}}
+          {{#btn-group-radio-input groupValue=hasSubcontractors value=true}}
             <span class="btn__title btn__title--input">
               <i class="ss-database"></i>
               Yes
             </span>
             <span class="btn__msg btn__input ss-delete">
-              {{input type="text" placeholder="How many subcontractors will be onsite at any one time?" value=othersubs}}
+              {{input type="text" placeholder="How many subcontractors will be onsite at any one time?" value=subcontractorsOnSite}}
             </span>
           {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=subs value="No Sub"}}
+          {{#btn-group-radio-input groupValue=hasSubcontractors value=false}}
             <span class="btn__title">
               <i class="ss-tools"></i>
               No
@@ -47,21 +49,23 @@
       </div>
     </div>
 
-    <div class="form__group form__group--large">
-      <label class="form__group__label">
-        <span class="step-no">3</span>
-        What percentage of your turnover relates to payments to bona fide subcontractors?
-      </label>
-      <div {{bind-attr class=":form__control isEmployersLiabilityValid:form__control--invalid :clearfix"}}>
-        <div class="form__control__left">
-          <div class="input-price">%</div>
-          {{input type="text" value=employersLiability placeholder="Amount"}}
-        </div>
-        <div class="form__control__right">
-          {{input type="range" value=employersLiability min=5 max=100 step=5}}
+    {{#if hasSubcontractors}}
+      <div class="form__group form__group--large">
+        <label class="form__group__label">
+          <span class="step-no">3</span>
+          What percentage of your turnover relates to payments to bona fide subcontractors?
+        </label>
+        <div {{bind-attr class=":form__control isSubcontractorPercentageValid:form__control--invalid :clearfix"}}>
+          <div class="form__control__left">
+            <div class="input-price">%</div>
+            {{input type="text" value=subcontractorPercentage placeholder="Amount"}}
+          </div>
+          <div class="form__control__right">
+            {{input type="range" value=subcontractorPercentage min=5 max=100 step=5}}
+          </div>
         </div>
       </div>
-    </div>
+    {{/if}}
 
   </form>
 

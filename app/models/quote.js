@@ -2,6 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Object.extend({
 
+  title: null,
+  name: null,
+  email: null,
+  phoneNumber: null,
+  alternativePhoneNumber: null,
   occupation: null,
   otherOccupation: null,
   experience: null,
@@ -10,6 +15,16 @@ export default Ember.Object.extend({
   numberOfEmployees: null,
   employersLiability: null,
   professionalIndemnity: null,
+  businessPostcode: null,
+  turnover: null,
+  hasSecondTrade: null,
+  secondTrade: null,
+  hasSubcontractors: null,
+  subcontractorsOnSite: null,
+  subcontractorPercentage: null,
+  hasLegalExpensesCover: null,
+  hasBuildingCover: null,
+  buildingRebuildCosts: null,
 
 
   publicLiabilityQuote: function () {
