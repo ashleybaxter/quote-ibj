@@ -18,7 +18,15 @@ export function initialize() {
 
     toggleActiveForInitialValue: function () {
       this.toggleActive();
-    }.on('didInsertElement')
+    }.on('didInsertElement'),
+
+    focusIn: function () {
+      this.toggleActive();
+    },
+
+    focusOut: function () {
+      this.toggleActive();
+    }
 
   });
 }
