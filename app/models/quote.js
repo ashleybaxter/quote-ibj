@@ -22,9 +22,11 @@ export default Ember.Object.extend({
   hasSubcontractors: null,
   subcontractorsOnSite: null,
   subcontractorPercentage: null,
-  hasLegalExpensesCover: null,
+  hasLegalExpenseCover: null,
   hasBuildingCover: null,
-  buildingRebuildCosts: null,
+  buildingRebuildCost: null,
+  hasEquipmentCover: null,
+  equipmentReplacementCost: null,
 
 
   publicLiabilityQuote: function () {

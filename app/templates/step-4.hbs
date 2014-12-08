@@ -16,7 +16,7 @@
         <span class="step-no">5</span>
         Sum insured for Public Liability:
       </label>
-      <div {{bind-attr class=":form__control isPublicLiabilityValid:form__control--invalid :clearfix"}}>
+      <div class="form__control clearfix">
         <div class="form__control__left">
           <div class="input-price">£</div>
           {{input type="text" value=publicLiability placeholder="Amount"}}
@@ -24,11 +24,7 @@
         <div class="form__control__right">
           {{input type="range" class="input-range" value=publicLiability min=1000 max=1000000 step=1000}}
         </div>
-        {{#unless isPublicLiabilityValid}}
-          <div class="form__control__error">
-            You must enter a number
-          </div>
-        {{/unless}}
+        {{number-error number=publicLiability}}
       </div>
     </div>
     <div class="form__group form__group--large">
@@ -36,7 +32,7 @@
         <span class="step-no">6</span>
         Sum insured for Employers Liability:
       </label>
-      <div {{bind-attr class=":form__control isEmployersLiabilityValid:form__control--invalid :clearfix"}}>
+      <div class="form__control clearfix">
         <div class="form__control__left">
           <div class="input-price">£</div>
           {{input type="text" value=employersLiability placeholder="Amount"}}
@@ -44,11 +40,7 @@
         <div class="form__control__right">
           {{input type="range" value=employersLiability min=1000 max=1000000 step=1000}}
         </div>
-        {{#unless isEmployersLiabilityValid}}
-          <div class="form__control__error">
-            You must enter a number
-          </div>
-        {{/unless}}
+        {{number-error number=employersLiability}}
       </div>
     </div>
     <div class="form__group form__group--large">
@@ -56,7 +48,7 @@
         <span class="step-no">7</span>
         Sum insured for Professional Indemnity:
       </label>
-      <div {{bind-attr class=":form__control isProfessionalIndemnityValid:form__control--invalid :clearfix"}}>
+      <div class="form__control clearfix">
         <div class="form__control__left">
           <div class="input-price">£</div>
           {{input type="text" value=professionalIndemnity placeholder="Amount"}}
@@ -64,11 +56,7 @@
         <div class="form__control__right">
           {{input type="range" value=professionalIndemnity min=1000 max=1000000 step=1000}}
         </div>
-        {{#unless isProfessionalIndemnityValid}}
-          <div class="form__control__error">
-            You must enter a number
-          </div>
-        {{/unless}}
+        {{number-error number=professionalIndemnity}}
       </div>
     </div>
 
@@ -79,14 +67,14 @@
       </label>
       <div class="form__control">
         <div class="btn-group radio-btn-group radio-btn-group--half">
-          {{#btn-group-radio-input groupValue=hasLegalExpensesCover value=true}}
+          {{#btn-group-radio-input groupValue=hasLegalExpenseCover value=true}}
             <span class="btn__title">
               <i class="ss-database"></i>
                £100,000
             </span>
             <span class="btn__msg ss-delete">No problem!</span>
           {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=hasLegalExpensesCover value=false}}
+          {{#btn-group-radio-input groupValue=hasLegalExpenseCover value=false}}
             <span class="btn__title">
               <i class="ss-database"></i>
                Not required
@@ -131,11 +119,12 @@
         <div {{bind-attr class=":form__control isBuildingRebuildCostsValid:form__control--invalid :clearfix"}}>
           <div class="form__control__left">
             <div class="input-price">£</div>
-            {{input type="text" value=buildingRebuildCosts placeholder="Amount"}}
+            {{input type="text" value=buildingRebuildCost placeholder="Amount"}}
           </div>
           <div class="form__control__right">
-            {{input type="range" value=buildingRebuildCosts min=1000 max=1000000 step=1000}}
+            {{input type="range" value=buildingRebuildCost min=1000 max=1000000 step=1000}}
           </div>
+          {{number-error number=buildingRebuildCost}}
         </div>
       </div>
     {{/if}}
@@ -174,11 +163,12 @@
         <div {{bind-attr class=":form__control isOfficeCostsValid:form__control--invalid :clearfix"}}>
           <div class="form__control__left">
             <div class="input-price">£</div>
-            {{input type="text" value=OfficeCosts placeholder="Amount"}}
+            {{input type="text" value=equipmentReplacementCost placeholder="Amount"}}
           </div>
           <div class="form__control__right">
-            {{input type="range" value=OfficeCosts min=1000 max=1000000 step=1000}}
+            {{input type="range" value=equipmentReplacementCost min=1000 max=1000000 step=1000}}
           </div>
+          {{number-error number=equipmentReplacementCost}}
         </div>
       </div>
     {{/if}}
