@@ -7,10 +7,10 @@ export default Ember.ObjectController.extend({
   isOccupationValid: function () {
     var occupation = this.get('occupation');
     var otherOccupation = this.get('otherOccupation');
-    if (isBlank(occupation)) {
-      return false;
-    } else {
+    if (occupation === 'other') {
       return !isBlank(otherOccupation);
+    } else {
+      return !isBlank(occupation);
     }
   }.property('occupation', 'otherOccupation'),
 
@@ -20,7 +20,7 @@ export default Ember.ObjectController.extend({
     if (hasSecondTrade) {
       return !isBlank(secondTrade);
     } else {
-      return false;
+      return !isBlank(hasSecondTrade);
     }
   },
 
@@ -30,6 +30,8 @@ export default Ember.ObjectController.extend({
   }.property('turnover'),
 
   isValid: function () {
+    this.get('occupation');
+
     return this.get('isOccupationValid') &&
            this.get('isSecondTradeValid') &&
            !isBlank(this.get('businessType')) &&

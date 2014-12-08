@@ -7,10 +7,10 @@ export default Ember.ObjectController.extend({
   isOccupationValid: function () {
     var occupation = this.get('occupation');
     var otherOccupation = this.get('otherOccupation');
-    if (isBlank(occupation)) {
-      return false;
-    } else {
+    if (occupation === 'other') {
       return !isBlank(otherOccupation);
+    } else {
+      return !isBlank(occupation);
     }
   }.property('occupation', 'otherOccupation'),
 
