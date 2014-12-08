@@ -10,15 +10,16 @@
 <section class="content">
   <form class="form">
     <h3>Tell us about your employees</h3>
-    
+
     <div class="form__group form__group--large">
       <label class="form__group__label">
         <span class="step-no">1</span>
         How many employees do you have?
       </label>
-      <div {{bind-attr class=":form__control isNumberOfEmployeesValid:form__control--invalid"}}>
+      <div class="form__control">
         <div class="input-price"><i class="ss-malefemale"></i></div>
         {{input type="text" value=numberOfEmployees placeholder=""}}
+        {{number-error number=numberOfEmployees}}
       </div>
     </div>
 
@@ -46,6 +47,9 @@
             <span class="btn__msg ss-delete">No problem!</span>
           {{/btn-group-radio-input}}
         </div>
+        {{#if hasSubcontractors}}
+          {{number-error number=subcontractorsOnSite}}
+        {{/if}}
       </div>
     </div>
 
@@ -64,15 +68,16 @@
             {{input type="range" value=subcontractorPercentage min=5 max=100 step=5}}
           </div>
         </div>
+        {{number-error number=subcontractorPercentage}}
       </div>
     {{/if}}
 
   </form>
 
   <div class="content__footer clearfix">
-    {{#link-to 'step-3' class='btn'}}
-    Next
-    <i class="ss-navigateright"></i>
-    {{/link-to}}
+    <button {{bind-attr class=":btn isValid::btn--inactive"}} {{action 'save'}}>
+      Next
+      <i class="ss-navigateright"></i>
+    </button>
   </div>
 </section>
