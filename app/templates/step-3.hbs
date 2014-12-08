@@ -27,9 +27,14 @@
         <span class="step-no">2</span>
         Name:
       </label>
-      <div class="form__control">
+      <div {{bind-attr class=":form__control nameError:form__control--invalid"}}>
         <div class="input-price"><i class="ss-malefemale"></i></div>
-        {{input type="text" value=name placeholder=""}}
+        {{input type="text" value=name placeholder="" focus-out='validateName'}}
+        {{#if nameError}}
+          <div class="form__control__error">
+            You must enter your full name
+          </div>
+        {{/if}}
       </div>
     </div>
 
@@ -38,9 +43,14 @@
         <span class="step-no">3</span>
         Email:
       </label>
-      <div class="form__control">
+      <div {{bind-attr class=":form__control emailError:form__control--invalid"}}>
         <div class="input-price"><i class="ss-malefemale"></i></div>
-        {{input type="text" value=email placeholder=""}}
+        {{input type="text" value=email placeholder="" focus-out='validateEmail'}}
+        {{#if emailError}}
+          <div class="form__control__error">
+            You must enter a valid e-mail address
+          </div>
+        {{/if}}
       </div>
     </div>
 
@@ -54,7 +64,7 @@
         {{input type="text" value=phoneNumber placeholder=""}}
       </div>
     </div>
-    
+
     <div class="form__group form__group--large">
       <label class="form__group__label">
         <span class="step-no">4</span>
@@ -70,9 +80,9 @@
   </form>
 
   <div class="content__footer clearfix">
-    {{#link-to 'step-4' class='btn'}}
-    Next
-    <i class="ss-navigateright"></i>
-    {{/link-to}}
+    <button {{bind-attr class=":btn isValid::btn--inactive"}} {{action 'save'}}>
+      Next
+      <i class="ss-navigateright"></i>
+    </button>
   </div>
 </section>
