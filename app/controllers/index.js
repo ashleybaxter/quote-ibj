@@ -4,27 +4,38 @@ var isBlank = Ember.isBlank;
 
 export default Ember.ObjectController.extend({
 
+  isOccupationValid: function () {
+    var occupation = this.get('occupation');
+    var otherOccupation = this.get('otherOccupation');
+    if (isBlank(occupation)) {
+      return false;
+    } else {
+      return !isBlank(otherOccupation);
+    }
+  }.property('occupation', 'otherOccupation'),
+
   isPublicLiabilityValid: function () {
-    return this.isNumber(this.get('publicLiability'));
+    var number = this.get('publicLiability');
+    return !isBlank(number) && this.isNumber(number);
   }.property('publicLiability'),
 
   isEmployersLiabilityValid: function () {
-    return this.isNumber(this.get('employersLiability'));
+    var number = this.get('employersLiability');
+    return !isBlank(number) && this.isNumber(number);
   }.property('employersLiability'),
 
   isProfessionalIndemnityValid: function () {
-    return this.isNumber(this.get('professionalIndemnity'));
+    var number = this.get('professionalIndemnity');
+    return !isBlank(number) && this.isNumber(number);
   }.property('professionalIndemnity'),
 
   isNumberOfEmployeesValid: function () {
-    return this.isNumber(this.get('numberOfEmployees'));
+    var number = this.get('numberOfEmployees');
+    return !isBlank(number) && this.isNumber(number);
   }.property('numberOfEmployees'),
 
   isValid: function () {
-    var occupation = this.get('occupation');
-
-    return !isBlank(occupation) &&
-           // validate otherOccupation is present if occupation == 'other'
+    return this.get('isOccupationValid') &&
            !isBlank(this.get('experience')) &&
            !isBlank(this.get('businessType')) &&
            this.get('isPublicLiabilityValid') &&
@@ -32,8 +43,7 @@ export default Ember.ObjectController.extend({
            this.get('isProfessionalIndemnityValid') &&
            this.get('isNumberOfEmployeesValid');
   }.property(
-    'occupation',
-    'otherOccupation',
+    'isOccupationValid',
     'experience',
     'businessType',
     'isPublicLiabilityValid',
@@ -43,7 +53,6 @@ export default Ember.ObjectController.extend({
 
   isNumber: function (number) {
     var regexp = /^\d+$/;
-
     return isBlank(number) || (''+number).match(regexp);
   }
 
