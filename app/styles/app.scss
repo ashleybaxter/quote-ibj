@@ -556,6 +556,77 @@ input[type="radio"]:checked + label .btn__title--input {
   }
 }
 
+input[type="radio"].radio-input-text:checked + label {
+  border-left: 1px solid #ccc;
+  .btn__input input {
+    border: 1px solid #ccc;
+  }
+  .btn__title--input {
+    &:after {
+      border-left-color: #fff;
+    }
+    &:before {
+      border-left-color: #333;
+    }
+  }
+  .btn__msg:before {
+    color: #666;
+  }
+
+  &:hover {
+    background: #fff;
+    border: 1px solid #ccc;
+    .btn__msg:before {
+      color: #666;
+    }
+    span {
+      color: #333;
+    }
+    i {
+      color: #666;
+    }
+  }
+
+  .active & {
+    background: #3498DB;
+    border: 1px solid #3498DB;
+    color: #fff;
+    .btn__msg:before {
+      color: #fff;
+    }
+    .btn__input input {
+      border-left: 1px solid #3498DB;
+      border-right: 1px solid #3498DB;
+    }
+
+    .btn__title--input {
+      &:after, &:before {
+        border-left-color: #3498DB;
+      }
+      .btn__msg:before {
+        color: #fff;
+      }
+      span {
+        color: #fff;
+      }
+      i {
+        color: #fff;
+      }
+    }
+    &:hover {
+      .btn__msg:before {
+        color: #fff;
+      }
+      span {
+        color: #fff;
+      }
+      i {
+        color: #fff;
+      }
+    }
+  }
+}
+
 
 
 input[type=range] {
