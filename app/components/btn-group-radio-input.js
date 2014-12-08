@@ -40,6 +40,10 @@ export default Ember.Component.extend({
   change: function () {
     if (this.$().prop('checked')) {
       this.set('groupValue', this.get('value'));
+      Ember.run.next(this, function () {
+        var id = this.$().attr('id');
+        Ember.$('label[for="'+id+'"] input').focus();
+      });
     }
 
     this.updateActive();
