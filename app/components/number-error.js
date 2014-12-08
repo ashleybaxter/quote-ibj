@@ -12,7 +12,7 @@ export default Ember.Component.extend({
     var isNotNumber = !isBlank(number) && !(''+number).match(this.get('regexp'));
 
     Ember.run.next(this, function() {
-      this.$().closest('.form__control').toggleClass('has-error', isNotNumber);
+      this.$().closest('.form__control').toggleClass('form__control--invalid', isNotNumber);
     });
 
     return isNotNumber;
