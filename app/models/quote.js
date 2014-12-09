@@ -11,7 +11,7 @@ export default Ember.Object.extend({
   occupation: null,
   otherOccupation: null,
   experience: null,
-  businessType: 'one',
+  businessType: null,
   publicLiability: null,
   numberOfEmployees: null,
   employersLiability: null,
