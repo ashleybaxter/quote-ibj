@@ -1,10 +1,10 @@
-<section class="content">
-  <ul>
-    <li>Step 1</li>
-    <li class="active">Step 2</li>
-    <li>Step 3</li>
-    <li>Step 4</li>
-    <li>Step 5</li>
+<section class="content progress">
+  <ul class="clearfix">
+    <li class="complete"><a href="/step-1">1</a></li>
+    <li class="active"><span>2</span></li>
+    <li><span>3</span></li>
+    <li><span>4</span></li>
+    <li><span>5</span></li>
   </ul>
 </section>
 <section class="content">
@@ -13,7 +13,7 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        <span class="step-no">1</span>
+        
         How many employees do you have?
       </label>
       <div class="form__control">
@@ -25,14 +25,14 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        <span class="step-no">2</span>
+        
         Do you use bona fide subcontractors?
       </label>
       <div class="form__control">
         <div class="btn-group radio-btn-group radio-btn-group--half">
           {{#btn-group-radio-input groupValue=hasSubcontractors value=true}}
             <span class="btn__title btn__title--input">
-              <i class="ss-database"></i>
+              <i class="ss-footsteps"></i>
               Yes
             </span>
             <span class="btn__msg btn__input ss-delete">
@@ -41,7 +41,7 @@
           {{/btn-group-radio-input}}
           {{#btn-group-radio-input groupValue=hasSubcontractors value=false}}
             <span class="btn__title">
-              <i class="ss-tools"></i>
+              <i class="ss-contacts"></i>
               No
             </span>
             <span class="btn__msg ss-delete">No problem!</span>
@@ -56,7 +56,7 @@
     {{#if hasSubcontractors}}
       <div class="form__group form__group--large">
         <label class="form__group__label">
-          <span class="step-no">3</span>
+          
           What percentage of your turnover relates to payments to bona fide subcontractors?
         </label>
         <div {{bind-attr class=":form__control isSubcontractorPercentageValid:form__control--invalid :clearfix"}}>

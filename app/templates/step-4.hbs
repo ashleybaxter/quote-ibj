@@ -1,10 +1,10 @@
-<section class="content">
-  <ul>
-    <li>Step 1</li>
-    <li>Step 2</li>
-    <li>Step 3</li>
-    <li class="active">Step 4</li>
-    <li>Step 5</li>
+<section class="content progress">
+  <ul class="clearfix">
+    <li class="complete"><a href="/step-1">1</a></li>
+    <li class="complete"><a href="/step-2">2</a></li>
+    <li class="complete"><a href="/step-3">3</a></li>
+    <li class="active"><span>4</span></li>
+    <li><span>5</span></li>
   </ul>
 </section>
 <section class="content">
@@ -13,7 +13,7 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        <span class="step-no">5</span>
+        
         Sum insured for Public Liability:
       </label>
       <div class="form__control clearfix">
@@ -29,7 +29,7 @@
     </div>
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        <span class="step-no">6</span>
+        
         Sum insured for Employers Liability:
       </label>
       <div class="form__control clearfix">
@@ -45,7 +45,7 @@
     </div>
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        <span class="step-no">7</span>
+        
         Sum insured for Professional Indemnity:
       </label>
       <div class="form__control clearfix">
@@ -62,7 +62,7 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        <span class="step-no">2</span>
+        
         Legal Expenses
       </label>
       <div class="form__control">
@@ -87,7 +87,7 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        <span class="step-no">2</span>
+        
         Building
       </label>
       <div class="form__control">
@@ -113,7 +113,7 @@
     {{#if hasBuildingCover}}
       <div class="form__group form__group--large">
         <label class="form__group__label">
-          <span class="step-no">7</span>
+          
           Select how much it would cost to rebuild your property from scratch
         </label>
         <div {{bind-attr class=":form__control isBuildingRebuildCostsValid:form__control--invalid :clearfix"}}>
@@ -131,7 +131,7 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        <span class="step-no">2</span>
+        
         Business / Office Equipment
       </label>
       <div class="form__control">
@@ -157,7 +157,7 @@
     {{#if hasEquipmentCover}}
       <div class="form__group form__group--large">
         <label class="form__group__label">
-          <span class="step-no">7</span>
+          
           Select how much it would cost to replace all of your business / office equipment.
         </label>
         <div {{bind-attr class=":form__control isOfficeCostsValid:form__control--invalid :clearfix"}}>

@@ -667,3 +667,56 @@ input[type=range]::-webkit-slider-runnable-track {
 input[type=range]:focus::-webkit-slider-runnable-track {
 
 }
+
+
+.progress {
+  background: transparent;
+  text-align: center;
+  ul {
+    margin: auto;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    width: 410px;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      width: 370px;
+      height: 5px;
+      background: #fff;
+      left: 20px;
+      top: 19px;
+      z-index: 10;
+    }
+    li {
+      position: relative;
+      z-index: 20;
+      float: left;
+      width: 42px;
+      height: 42px;
+      background: #fff;
+      border-radius: 100%;
+      margin: 0 20px;
+      padding: 5px;
+    }
+    span, a {
+      width: 32px;
+      height: 32px;
+      display: block;
+      border-radius: 100%;
+      background: #f1f1f1;
+      font-size: 18px;
+      font-weight: bold;
+      line-height: 32px;
+    }
+    li.active span {
+      background: #ccc;
+    }
+    li.complete a {
+      background: #3498DB;
+      color: #fff;
+    }
+  }
+}
