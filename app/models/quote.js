@@ -46,13 +46,45 @@ export default Ember.Object.extend({
     return 1.8 * (professionalIndemnity / 1000);
   }.property('professionalIndemnity'),
 
+  legalExpensesQuote: function () {
+    if (this.get('hasLegalExpenseCover')) {
+      return 0;
+    } else {
+      return 0;
+    }
+  }.property('hasLegalExpenseCover'),
+
+  buildingCoverQuote: function () {
+    var rebuildCost = this.get('buildingRebuildCost');
+    if (rebuildCost) {
+      return 1.0 * (rebuildCost / 1000);
+    } else {
+      return 0;
+    }
+  }.property('buildingRebuildCost'),
+
+  equipmentCoverQuote: function () {
+    var replacementCost = this.get('equipmentReplacementCost');
+    if (replacementCost) {
+      return 1.0 * (replacementCost / 1000);
+    } else {
+      return 0;
+    }
+  }.property('equipmentReplacementCost'),
+
   quoteTotal: function () {
     return this.get('publicLiabilityQuote') +
            this.get('employersLiabilityQuote') +
-           this.get('professionalIndemnityQuote');
+           this.get('professionalIndemnityQuote') +
+           this.get('legalExpensesQuote') +
+           this.get('buildingCoverQuote') +
+           this.get('equipmentCoverQuote');
   }.property(
     'publicLiabilityQuote',
     'employersLiabilityQuote',
-    'professionalIndemnityQuote')
+    'professionalIndemnityQuote',
+    'legalExpensesQuote',
+    'buildingCoverQuote',
+    'equipmentCoverQuote')
 
 });

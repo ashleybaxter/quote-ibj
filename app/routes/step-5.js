@@ -6,7 +6,7 @@ export default Ember.Route.extend({
       if (!this.controller.get('isValid')) {
         alert("Please fill in all fields before continuing");
       } else {
-        alert("Done!")
+        this.transitionTo('final-quote');
       }
     }
   }
