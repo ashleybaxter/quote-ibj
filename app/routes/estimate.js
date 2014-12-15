@@ -7,6 +7,7 @@ export default Ember.Route.extend({
   actions: {
     facebookConnect: function () {
       var model = this.get('controller.model');
+      model.set('title', 'Mr');
       model.set('name', 'Walter Gutierrez');
       model.set('email', 'walter.gutierrez56@example.com');
       model.set('phoneNumber', '(327)-269-1797');
