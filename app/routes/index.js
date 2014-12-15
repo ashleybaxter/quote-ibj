@@ -6,12 +6,12 @@ export default Ember.Route.extend({
 
   actions: {
     save: function () {
-      if (!this.controller.get('isValid')) {
+      if (!this.controller.get('model.isEstimateValid')) {
         alert("Please fill in all fields before continuing");
       } else {
         this.transitionTo('estimate');
       }
     }
   }
-  
+
 });

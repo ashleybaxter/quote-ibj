@@ -1,5 +1,12 @@
 import Ember from 'ember';
 
+var isBlank = Ember.isBlank;
+
+var isNumber = function (number) {
+  var regexp = /^\d+$/;
+  return isBlank(number) || (''+number).match(regexp);
+}
+
 export default Ember.Object.extend({
 
   facebookConnected: false,
@@ -85,6 +92,168 @@ export default Ember.Object.extend({
     'professionalIndemnityQuote',
     'legalExpensesQuote',
     'buildingCoverQuote',
-    'equipmentCoverQuote')
+    'equipmentCoverQuote'),
+
+  // Validation
+
+  isNameValid: function () {
+    var name = (''+this.get('name')).trim();
+    return !isBlank(name) && name.split(' ').length >= 2;
+  }.property('name'),
+
+  isEmailValid: function () {
+    var email = (''+this.get('email')).trim();
+    var emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
+    return !isBlank(email) && email.match(emailRegex);
+  }.property('email'),
+
+  isOccupationValid: function () {
+    var occupation = this.get('occupation');
+    var otherOccupation = this.get('otherOccupation');
+    if (occupation === 'other') {
+      return !isBlank(otherOccupation);
+    } else {
+      return !isBlank(occupation);
+    }
+  }.property('occupation', 'otherOccupation'),
+
+  isPublicLiabilityValid: function () {
+    var number = this.get('publicLiability');
+    return !isBlank(number) && isNumber(number);
+  }.property('publicLiability'),
+
+  isEmployersLiabilityValid: function () {
+    var number = this.get('employersLiability');
+    return !isBlank(number) && isNumber(number);
+  }.property('employersLiability'),
+
+  isProfessionalIndemnityValid: function () {
+    var number = this.get('professionalIndemnity');
+    return !isBlank(number) && isNumber(number);
+  }.property('professionalIndemnity'),
+
+  isNumberOfEmployeesValid: function () {
+    var number = this.get('numberOfEmployees');
+    return !isBlank(number) && isNumber(number);
+  }.property('numberOfEmployees'),
+
+  isSecondTradeValid: function () {
+    var hasSecondTrade = this.get('hasSecondTrade');
+    var secondTrade = this.get('secondTrade');
+    if (hasSecondTrade) {
+      return !isBlank(secondTrade);
+    } else {
+      return !isBlank(hasSecondTrade);
+    }
+  },
+
+  isTurnoverValid: function () {
+    var number = this.get('turnover');
+    return !isBlank(number) && isNumber(number);
+  }.property('turnover'),
+
+  isSubcontractorsValid: function () {
+    var hasSubcontractors = this.get('hasSubcontractors');
+    var subcontractorsOnSite = this.get('subcontractorsOnSite');
+    if (hasSubcontractors) {
+      return !isBlank(subcontractorsOnSite) &&
+          isNumber(subcontractorsOnSite) &&
+          !isBlank(this.get('subcontractorPercentage')) &&
+          isNumber(this.get('subcontractorPercentage'));
+    } else {
+      return !isBlank(hasSubcontractors);
+    }
+  }.property(
+    'hasSubcontractors',
+    'subcontractorsOnSite',
+    'subcontractorPercentage'),
+
+  isBuildingCoverValid: function () {
+    var hasBuildingCover = this.get('hasBuildingCover');
+    var rebuildCost = this.get('buildingRebuildCost');
+    if (hasBuildingCover) {
+      return !isBlank(rebuildCost) && isNumber(rebuildCost);
+    } else {
+      return !isBlank(hasBuildingCover);
+    }
+  }.property('hasBuildingCover', 'buildingRebuildCost'),
+
+  isEquipmentCoverValid: function () {
+    var hasEquipmentCover = this.get('hasEquipmentCover');
+    var replacementCost = this.get('equipmentReplacementCost');
+    if (hasEquipmentCover) {
+      return !isBlank(replacementCost) && isNumber(replacementCost);
+    } else {
+      return !isBlank(hasEquipmentCover);
+    }
+  }.property('hasEquipmentCover', 'equipmentReplacementCost'),
+
+
+  isEstimateValid: function () {
+    return this.get('isOccupationValid') &&
+        !isBlank(this.get('experience')) &&
+        !isBlank(this.get('businessType')) &&
+        this.get('isPublicLiabilityValid') &&
+        this.get('isEmployersLiabilityValid') &&
+        this.get('isProfessionalIndemnityValid') &&
+        this.get('isNumberOfEmployeesValid');
+  }.property(
+    'isOccupationValid',
+    'experience',
+    'businessType',
+    'isPublicLiabilityValid',
+    'isEmployersLiabilityValid',
+    'isProfessionalIndemnityValid',
+    'isNumberOfEmployeesValid'),
+
+  isStep1Valid: function () {
+    this.get('occupation');
+
+    return this.get('isOccupationValid') &&
+        this.get('isSecondTradeValid') &&
+        !isBlank(this.get('businessType')) &&
+        !isBlank(this.get('experience')) &&
+        !isBlank(this.get('businessPostcode')) &&
+        this.get('isTurnoverValid');
+  }.property(
+    'isOccupationValid',
+    'isSecondTradeValid',
+    'businessType',
+    'experience',
+    'businessPostcode',
+    'isTurnoverValid'),
+
+  isStep2Valid: function () {
+    return this.get('isNumberOfEmployeesValid') &&
+        this.get('isSubcontractorsValid');
+  }.property(
+    'isNumberOfEmployeesValid',
+    'isSubcontractorsValid'),
+
+  isStep3Valid: function () {
+    return !isBlank(this.get('title')) &&
+        this.get('isNameValid') &&
+        this.get('isEmailValid') &&
+        !isBlank(this.get('phoneNumber'));
+  }.property(
+    'title',
+    'isNameValid',
+    'isEmailValid',
+    'phoneNumber'),
+
+  isStep4Valid: function () {
+    return this.get('isPublicLiabilityValid') &&
+        this.get('isEmployersLiabilityValid') &&
+        this.get('isProfessionalIndemnityValid') &&
+        !isBlank(this.get('hasLegalExpenseCover')) &&
+        this.get('isBuildingCoverValid') &&
+        this.get('isEquipmentCoverValid');
+  }.property(
+    'isPublicLiabilityValid',
+    'isEmployersLiabilityValid',
+    'isProfessionalIndemnityValid',
+    'hasLegalExpenseCover',
+    'isBuildingCoverValid',
+    'isEquipmentCoverValid'),
 
 });

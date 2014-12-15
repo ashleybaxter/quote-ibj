@@ -13,7 +13,7 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        
+
         Sum insured for Public Liability:
       </label>
       <div class="form__control clearfix">
@@ -29,7 +29,7 @@
     </div>
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        
+
         Sum insured for Employers Liability:
       </label>
       <div class="form__control clearfix">
@@ -45,7 +45,7 @@
     </div>
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        
+
         Sum insured for Professional Indemnity:
       </label>
       <div class="form__control clearfix">
@@ -62,7 +62,7 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        
+
         Legal Expenses
       </label>
       <div class="form__control">
@@ -85,7 +85,7 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        
+
         Building
       </label>
       <div class="form__control">
@@ -109,7 +109,7 @@
     {{#if hasBuildingCover}}
       <div class="form__group form__group--large">
         <label class="form__group__label">
-          
+
           Select how much it would cost to rebuild your property from scratch
         </label>
         <div {{bind-attr class=":form__control isBuildingRebuildCostsValid:form__control--invalid :clearfix"}}>
@@ -127,7 +127,7 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        
+
         Business / Office Equipment
       </label>
       <div class="form__control">
@@ -151,7 +151,7 @@
     {{#if hasEquipmentCover}}
       <div class="form__group form__group--large">
         <label class="form__group__label">
-          
+
           Select how much it would cost to replace all of your business / office equipment.
         </label>
         <div {{bind-attr class=":form__control isOfficeCostsValid:form__control--invalid :clearfix"}}>
@@ -170,7 +170,7 @@
   </form>
 
   <div class="content__footer clearfix">
-    <button {{bind-attr class=":btn isValid::btn--inactive"}} {{action 'save'}}>
+    <button {{bind-attr class=":btn isStep4Valid::btn--inactive"}} {{action 'save'}}>
       Next
       <i class="ss-navigateright"></i>
     </button>

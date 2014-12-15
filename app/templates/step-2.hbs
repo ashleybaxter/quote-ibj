@@ -13,7 +13,7 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        
+
         How many employees do you have?
       </label>
       <div class="form__control">
@@ -25,7 +25,7 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        
+
         Do you use bona fide subcontractors?
       </label>
       <div class="form__control">
@@ -56,7 +56,7 @@
     {{#if hasSubcontractors}}
       <div class="form__group form__group--large">
         <label class="form__group__label">
-          
+
           What percentage of your turnover relates to payments to bona fide subcontractors?
         </label>
         <div {{bind-attr class=":form__control isSubcontractorPercentageValid:form__control--invalid :clearfix"}}>
@@ -75,7 +75,7 @@
   </form>
 
   <div class="content__footer clearfix">
-    <button {{bind-attr class=":btn isValid::btn--inactive"}} {{action 'save'}}>
+    <button {{bind-attr class=":btn isStep2Valid::btn--inactive"}} {{action 'save'}}>
       Next
       <i class="ss-navigateright"></i>
     </button>

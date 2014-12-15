@@ -13,7 +13,7 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        
+
         What would you like us to call you?
       </label>
       <div class="form__control">
@@ -24,7 +24,7 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        
+
         Full name:
       </label>
       <div {{bind-attr class=":form__control nameError:form__control--invalid"}}>
@@ -40,7 +40,7 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        
+
         Email:
       </label>
       <div {{bind-attr class=":form__control emailError:form__control--invalid"}}>
@@ -56,7 +56,7 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        
+
         Phone number:
       </label>
       <div class="form__control">
@@ -67,7 +67,7 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        
+
         Alternative phone number:
       </label>
       <div class="form__control">
@@ -80,7 +80,7 @@
   </form>
 
   <div class="content__footer clearfix">
-    <button {{bind-attr class=":btn isValid::btn--inactive"}} {{action 'save'}}>
+    <button {{bind-attr class=":btn isStep3Valid::btn--inactive"}} {{action 'save'}}>
       Next
       <i class="ss-navigateright"></i>
     </button>
