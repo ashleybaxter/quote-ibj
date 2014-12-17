@@ -12,6 +12,8 @@ Router.map(function() {
   this.route('step-3');
   this.route('step-4');
   this.route('step-5');
+  this.route('step-6');
+  this.route('step-7');
   this.route('final-quote');
 });
 
