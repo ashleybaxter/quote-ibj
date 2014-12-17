@@ -104,7 +104,7 @@ export default Ember.Object.extend({
   isEmailValid: function () {
     var email = (''+this.get('email')).trim();
     var emailRegex = /[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/;
-    return !isBlank(email) && email.match(emailRegex);
+    return !isBlank(email) && (email.match(emailRegex) != null);
   }.property('email'),
 
   isOccupationValid: function () {

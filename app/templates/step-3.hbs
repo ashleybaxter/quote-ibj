@@ -29,7 +29,7 @@
       </label>
       <div {{bind-attr class=":form__control nameError:form__control--invalid"}}>
         <div class="input-price"><i class="ss-heartuser"></i></div>
-        {{input type="text" value=name placeholder="" focus-out='validateName'}}
+        {{input type="text" value=name placeholder="" focus-out='validateName' isValid=isNameValid}}
         {{#if nameError}}
           <div class="form__control__error">
             You must enter your full name
@@ -45,7 +45,7 @@
       </label>
       <div {{bind-attr class=":form__control emailError:form__control--invalid"}}>
         <div class="input-price"><i class="ss-mail"></i></div>
-        {{input type="text" value=email placeholder="" focus-out='validateEmail'}}
+        {{input type="text" value=email placeholder="" focus-out='validateEmail' isValid=isEmailValid}}
         {{#if emailError}}
           <div class="form__control__error">
             You must enter a valid e-mail address

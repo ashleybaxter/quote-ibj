@@ -6,13 +6,21 @@ export function initialize() {
   // application.inject('route', 'foo', 'service:foo');
   Ember.TextField.reopen({
 
+    isValid: null,
+
     toggleActive: function () {
       if (isBlank(this.get('value'))) {
         this.$().removeClass('active');
         this.$().closest('.form__control').removeClass('active');
       } else {
-        this.$().addClass('active');
-        this.$().closest('.form__control').addClass('active');
+        if (this.get('isValid') != null) {
+          var isValid = this.get('isValid');
+          this.$().toggleClass('active', isValid);
+          this.$().closest('.form__control').toggleClass('active', isValid);
+        } else {
+          this.$().addClass('active');
+          this.$().closest('.form__control').addClass('active');
+        }
       }
     }.observes('value'),
 
@@ -20,12 +28,14 @@ export function initialize() {
       this.toggleActive();
     }.on('didInsertElement'),
 
-    focusIn: function () {
+    focusIn: function (event) {
       this.toggleActive();
+      this._super(event);
     },
 
-    focusOut: function () {
+    focusOut: function (event) {
       this.toggleActive();
+      this._super(event);
     }
 
   });
