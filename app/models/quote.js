@@ -36,6 +36,20 @@ export default Ember.Object.extend({
   hasEquipmentCover: null,
   equipmentReplacementCost: null,
 
+  hasWorkOutsideUK: null,
+  percentageOfContractsInUK: null,
+  percentageOfContractsInEU: null,
+  percentageOfContactsInUS: null,
+  percentageOfContractsInROW: null,
+
+  hasSpecificServiceLocations: null,
+  usesHeatProducingEquipment: null,
+  hasMoreThanTenYearsAtLocations: null,
+  numberOfYearsAtLocations: null,
+
+  hasSignificantLossPossibility: null,
+
+
 
   publicLiabilityQuote: function () {
     var publicLiability = parseInt(this.get('publicLiability'));
