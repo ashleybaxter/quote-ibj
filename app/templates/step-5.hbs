@@ -9,45 +9,228 @@
 </section>
 <section class="content">
   <form class="form">
-    <h3>Agreements</h3>
+    <h3>Business questions</h3>
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        Have any claims etc?
+        Have you done or do you plan to do any work on contracts outside the UK or for customers based outside the UK?
       </label>
       <div class="form__control">
-        <input type="radio" name="has_claims" value="yes" id="has_claims_yes" />
-        <label for="has_claims_yes">Yes</label>
-        <input type="radio" name="has_claims" value="no" id="has_claims_no" />
-        <label for="has_claims_no">No</label>
+        <div class="btn-group radio-btn-group radio-btn-group--half">
+          {{#btn-group-radio-input groupValue=hasOutsideUKClients value=true}}
+            <span class="btn__title">
+               Yes
+            </span>
+            <span class="btn__msg ss-delete">Ok, we'll require you to answer the next set of questions</span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=hasOutsideUKClients value=false}}
+            <span class="btn__title">
+               No
+            </span>
+            <span class="btn__msg ss-delete">No problem!</span>
+          {{/btn-group-radio-input}}
+        </div>
       </div>
     </div>
+
+    <div class="form__group form__group--large" style="display:none">
+      <label class="form__group__label">
+        What is your percentage of work on UK contracts
+      </label>
+      <div {{bind-attr class=":form__control isTurnoverValid:form__control--invalid :clearfix"}}>
+        <div class="form__control__left">
+          <div class="input-price">%</div>
+          {{input type="text" value=percentageUkWork placeholder="Amount"}}
+        </div>
+        <div class="form__control__right">
+          {{input type="range" class="input-range" value=percentageUkWork min=0 max=100 step=5}}
+        </div>
+      </div>
+      {{number-error number=percentageUkWork}}
+    </div>
+
+    <div class="form__group form__group--large" style="display:none">
+      <label class="form__group__label">
+        What is your percentage of work on EU contracts
+      </label>
+      <div {{bind-attr class=":form__control isTurnoverValid:form__control--invalid :clearfix"}}>
+        <div class="form__control__left">
+          <div class="input-price">%</div>
+          {{input type="text" value=percentageEuWork placeholder="Amount"}}
+        </div>
+        <div class="form__control__right">
+          {{input type="range" class="input-range" value=percentageEuWork min=0 max=100 step=5}}
+        </div>
+      </div>
+      {{number-error number=percentageEuWork}}
+    </div>
+
+    <div class="form__group form__group--large" style="display:none">
+      <label class="form__group__label">
+        What is your percentage of work on US & Canada contracts
+      </label>
+      <div {{bind-attr class=":form__control isTurnoverValid:form__control--invalid :clearfix"}}>
+        <div class="form__control__left">
+          <div class="input-price">%</div>
+          {{input type="text" value=percentageUsWork placeholder="Amount"}}
+        </div>
+        <div class="form__control__right">
+          {{input type="range" class="input-range" value=percentageUsWork min=0 max=100 step=5}}
+        </div>
+      </div>
+      {{number-error number=percentageUsWork}}
+    </div>
+
+    <div class="form__group form__group--large" style="display:none">
+      <label class="form__group__label">
+        What is your percentage of work on rest of the world contracts
+      </label>
+      <div {{bind-attr class=":form__control isTurnoverValid:form__control--invalid :clearfix"}}>
+        <div class="form__control__left">
+          <div class="input-price">%</div>
+          {{input type="text" value=percentageOtherWork placeholder="Amount"}}
+        </div>
+        <div class="form__control__right">
+          {{input type="range" class="input-range" value=percentageOtherWork min=0 max=100 step=5}}
+        </div>
+      </div>
+      {{number-error number=percentageOtherWork}}
+    </div>
+
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        Have any claims etc?
+        Do you provide services to OR undertake work at the following locations: - power stations - nuclear installations - oil, gas or petrochemical works - airports, aircraft, aviation safety or airside work - watercraft, docks, harbours - railways - hospitals or other medical facilities?
       </label>
       <div class="form__control">
-        <input type="radio" name="has_claims" value="yes" id="has_claims_yes" />
-        <label for="has_claims_yes">Yes</label>
-        <input type="radio" name="has_claims" value="no" id="has_claims_no" />
-        <label for="has_claims_no">No</label>
+        <div class="btn-group radio-btn-group radio-btn-group--half">
+          {{#btn-group-radio-input groupValue=hasServicesOfTheFollowing value=true}}
+            <span class="btn__title">
+               Yes
+            </span>
+            <span class="btn__msg ss-delete">Ok, we'll require you to answer the next set of questions</span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=hasServicesOfTheFollowing value=false}}
+            <span class="btn__title">
+               No
+            </span>
+            <span class="btn__msg ss-delete">No problem!</span>
+          {{/btn-group-radio-input}}
+        </div>
       </div>
     </div>
-    <div class="form__group form__group--large">
+
+    <div class="form__group form__group--large" style="display:none">
       <label class="form__group__label">
-        Have any claims etc?
+        Please select the location(s) you work at or provide services to
+      </label>
+      <label for="checkbox">
+        <input type="checkbox" name="checkbox">
+        Power stations or nuclear installations
+      </label>
+      <label for="checkbox">
+        <input type="checkbox" name="checkbox">
+        Onshore oil, gas or petrochemical works, pipelines or bulk storage locations
+      </label>
+      <label for="checkbox">
+        <input type="checkbox" name="checkbox">
+        Offshore oil, gas or petrochemical works, pipelines or bulk storage locations
+      </label>
+      <label for="checkbox">
+        <input type="checkbox" name="checkbox">
+        Airports, Aircraft, Aviation safety, Computer Systems or Work Airside at any point
+      </label>
+      <label for="checkbox">
+        <input type="checkbox" name="checkbox">
+        Watercraft, docks, harbours, boatyards or inland waterways
+      </label>
+      <label for="checkbox">
+        <input type="checkbox" name="checkbox">
+        Railways
+      </label>
+      <label for="checkbox">
+        <input type="checkbox" name="checkbox">
+        Hospitals or other medical facilities
+      </label>
+    </div>
+
+    <div class="form__group form__group--large" style="display:none">
+      <label class="form__group__label">
+        Do you use heat producing equipment in these locations
       </label>
       <div class="form__control">
-        <input type="radio" name="has_claims" value="yes" id="has_claims_yes" />
-        <label for="has_claims_yes">Yes</label>
-        <input type="radio" name="has_claims" value="no" id="has_claims_no" />
-        <label for="has_claims_no">No</label>
+        <div class="btn-group radio-btn-group radio-btn-group--half">
+          {{#btn-group-radio-input groupValue=hasHeatingEquipment value=true classNames="radio-input-text"}}
+            <span class="btn__title">
+              <i class="ss-footsteps"></i>
+              Yes
+            </span>
+            <span class="btn__msg ss-delete">No problem!</span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=hasHeatingEquipment value=false}}
+            <span class="btn__title">
+              <i class="ss-contacts"></i>
+              No
+            </span>
+            <span class="btn__msg ss-delete">No problem!</span>
+          {{/btn-group-radio-input}}
+        </div>
+      </div>
+    </div>
+
+    <div class="form__group form__group--large" style="display:none">
+      <label class="form__group__label">
+        Have you been providing services to or working at these locations for more than 10 years
+      </label>
+      <div class="form__control">
+        <div class="btn-group radio-btn-group radio-btn-group--half">
+          {{#btn-group-radio-input groupValue=hasHeatingManyYears value=true classNames="radio-input-text"}}
+            <span class="btn__title btn__title--input">
+              <i class="ss-footsteps"></i>
+              Yes
+            </span>
+            <span class="btn__msg btn__input ss-delete">
+              {{input type="text" placeholder="How many years at these locations?" value=heatingMoreThan10}}
+            </span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=hasHeatingManyYears value=false}}
+            <span class="btn__title">
+              <i class="ss-contacts"></i>
+              No
+            </span>
+            <span class="btn__msg ss-delete">No problem!</span>
+          {{/btn-group-radio-input}}
+        </div>
+        {{#if hasHeatingManyYears}}
+          {{number-error number=heatingMoreThan10}}
+        {{/if}}
+      </div>
+    </div>
+
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        Do you undertake work on any of the following that could result in a claim for significant loss of life or property damage: - Amusement rides, - Piling, - Swimming Pool Contracts, - Hospitals?
+      </label>
+      <div class="form__control">
+        <div class="btn-group radio-btn-group radio-btn-group--half">
+          {{#btn-group-radio-input groupValue=hasWorkSignificantLoss value=true}}
+            <span class="btn__title">
+               Yes
+            </span>
+            <span class="btn__msg ss-delete">No problem!</span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=hasWorkSignificantLoss value=false}}
+            <span class="btn__title">
+               No
+            </span>
+            <span class="btn__msg ss-delete">No problem!</span>
+          {{/btn-group-radio-input}}
+        </div>
       </div>
     </div>
   </form>
 
   <div class="content__footer clearfix">
-    <button {{action 'save'}}>
-      Finish
+    <button {{bind-attr class=":btn isStep1Valid::btn--inactive"}} {{action 'save'}}>
+      Next
       <i class="ss-navigateright"></i>
     </button>
   </div>
