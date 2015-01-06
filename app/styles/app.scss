@@ -414,6 +414,10 @@ p {
       border: 1px solid #3498DB!important;
     }
   }
+  i:before {
+    margin-top: 5px;
+    display: block;
+  }
 }
 
 .step-no {

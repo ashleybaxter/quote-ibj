@@ -1,5 +1,5 @@
 <section class="content content--left content--container">
-  <h1>Title for quote here</h1>
+  <h1>Title for final quote here</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
   <table class="estimate-table">
     <tr>
@@ -70,4 +70,44 @@
     </tr>
   </table>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+</section>
+
+
+<section class="content content--right">
+  <form class="form">
+    <h3>Pay</h3>
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        Card Number
+      </label>
+      <div {{bind-attr class=":form__control"}}>
+        <div class="input-price"><i class="ss-creditcard"></i></div>
+        {{input type="text" value=name placeholder="Card Number"}}
+      </div>
+    </div>
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        Expirery date
+      </label>
+      <div {{bind-attr class=":form__control"}}>
+        <div class="input-price"><i class="ss-creditcard"></i></div>
+        {{input type="text" value=email placeholder="MM/YY"}}
+      </div>
+    </div>
+    <div class="form__group form__group--large">
+      <label class="form__group__label">
+        Last 3 digits from the card number on the back
+      </label>
+      <div {{bind-attr class=":form__control"}}>
+        <div class="input-price"><i class="ss-creditcard"></i></div>
+        {{input type="text" value=phoneNumber placeholder="CSV"}}
+      </div>
+    </div>
+  </form>
+  <div class="content__footer clearfix">
+    {{#link-to 'step-1' class="btn"}}
+      Pay {{format-currency quoteTotal}} Securely
+      <i class="ss-lock"></i>
+    {{/link-to}}
+  </div>
 </section>
