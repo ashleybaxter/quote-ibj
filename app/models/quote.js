@@ -5,7 +5,7 @@ var isBlank = Ember.isBlank;
 var isNumber = function (number) {
   var regexp = /^\d+$/;
   return isBlank(number) || (''+number).match(regexp);
-}
+};
 
 export default Ember.Object.extend({
 
@@ -210,7 +210,10 @@ export default Ember.Object.extend({
         this.get('isPublicLiabilityValid') &&
         this.get('isEmployersLiabilityValid') &&
         this.get('isProfessionalIndemnityValid') &&
-        this.get('isNumberOfEmployeesValid');
+        this.get('isNumberOfEmployeesValid') &&
+        !isBlank(this.get('hasLegalExpenseCover')) &&
+        this.get('isBuildingCoverValid') &&
+        this.get('isEquipmentCoverValid');
   }.property(
     'isOccupationValid',
     'experience',
@@ -218,7 +221,10 @@ export default Ember.Object.extend({
     'isPublicLiabilityValid',
     'isEmployersLiabilityValid',
     'isProfessionalIndemnityValid',
-    'isNumberOfEmployeesValid'),
+    'isNumberOfEmployeesValid',
+    'hasLegalExpenseCover',
+    'isBuildingCoverValid',
+    'isEquipmentCoverValid'),
 
   isStep1Valid: function () {
     this.get('occupation');
