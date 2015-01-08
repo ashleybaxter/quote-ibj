@@ -1,5 +1,5 @@
 <section class="content content--left content--container">
-  <h1>Title for estimate here</h1>
+  <h1>Title for final quote here</h1>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
   <table class="estimate-table">
     <tr>
@@ -14,7 +14,7 @@
         {{#if publicLiability}}
           {{format-currency publicLiability}}
         {{else}}
-          Not included
+        Not included
         {{/if}}
       </td>
     </tr>
@@ -38,9 +38,41 @@
         {{/if}}
       </td>
     </tr>
+    <tr>
+      <td class="estimate-table__price">Legal Expenses</td>
+      <td>
+        {{#if hasLegalExpenseCover}}
+          {{format-currency 100000}}
+        {{else}}
+          Not included
+        {{/if}}
+      </td>
+    </tr>
+    <tr>
+      <td class="estimate-table__price">Building Cover</td>
+      <td>
+        {{#if hasBuildingCover}}
+          {{format-currency buildingRebuildCost}}
+        {{else}}
+          Not included
+        {{/if}}
+      </td>
+    </tr>
+    <tr>
+      <td class="estimate-table__price">Equipment Cover</td>
+      <td>
+        {{#if hasEquipmentCover}}
+          {{format-currency equipmentReplacementCost}}
+        {{else}}
+          Not included
+        {{/if}}
+      </td>
+    </tr>
   </table>
   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
 </section>
+
+
 <section class="content content--right">
   <form class="form">
     <h3>Apply</h3>
