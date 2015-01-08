@@ -21,7 +21,7 @@
           {{input type="text" value=publicLiability placeholder="Amount"}}
         </div>
         <div class="form__control__right">
-          {{input type="range" class="input-range" value=publicLiability min=1000 max=1000000 step=1000}}
+          {{input type="range" class="input-range" value=publicLiability min=0 max=1000000 step=10000}}
         </div>
         {{number-error number=publicLiability}}
       </div>
@@ -37,7 +37,7 @@
           {{input type="text" value=employersLiability placeholder="Amount"}}
         </div>
         <div class="form__control__right">
-          {{input type="range" value=employersLiability min=1000 max=1000000 step=1000}}
+          {{input type="range" value=employersLiability min=0 max=1000000 step=10000}}
         </div>
         {{number-error number=employersLiability}}
       </div>
@@ -53,7 +53,7 @@
           {{input type="text" value=professionalIndemnity placeholder="Amount"}}
         </div>
         <div class="form__control__right">
-          {{input type="range" value=professionalIndemnity min=1000 max=1000000 step=1000}}
+          {{input type="range" value=professionalIndemnity min=0 max=1000000 step=10000}}
         </div>
         {{number-error number=professionalIndemnity}}
       </div>
@@ -117,7 +117,7 @@
             {{input type="text" value=buildingRebuildCost placeholder="Amount"}}
           </div>
           <div class="form__control__right">
-            {{input type="range" value=buildingRebuildCost min=1000 max=1000000 step=1000}}
+            {{input type="range" value=buildingRebuildCost min=0 max=1000000 step=10000}}
           </div>
           {{number-error number=buildingRebuildCost}}
         </div>
@@ -159,7 +159,7 @@
             {{input type="text" value=equipmentReplacementCost placeholder="Amount"}}
           </div>
           <div class="form__control__right">
-            {{input type="range" value=equipmentReplacementCost min=1000 max=1000000 step=1000}}
+            {{input type="range" value=equipmentReplacementCost min=0 max=1000000 step=10000}}
           </div>
           {{number-error number=equipmentReplacementCost}}
         </div>
