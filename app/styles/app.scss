@@ -35,6 +35,9 @@ p {
   border-radius: 10px;
   position: relative;
 }
+.content--fixed {
+  position: fixed;
+}
 .content--container {
   background: transparent;
 }
@@ -42,13 +45,13 @@ p {
   float: right;
   margin-left: 40px;
   margin-right: 40px;
-  width: 480px;
+  width: 680px;
 }
 .content--left {
   float: left;
   margin-left: 40px;
   margin-right: 40px;
-  width: 680px;
+  width: 400px;
 }
 .content__footer {
   background: #586272;
