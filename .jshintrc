@@ -3,7 +3,8 @@
     "document",
     "window",
     "-Promise",
-    "Intl"
+    "Intl",
+    "ga"
   ],
   "browser" : true,
   "boss" : true,
