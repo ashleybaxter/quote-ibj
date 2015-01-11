@@ -80,6 +80,7 @@
         </div>
       </div>
     </div>
+
     <div class="form__group form__group--large">
       <label class="form__group__label">
         <span class="step-no">3</span>
@@ -108,6 +109,7 @@
         </div>
       </div>
     </div>
+
     <div class="form__group form__group--large">
       <label class="form__group__label">
         <span class="step-no">4</span>
@@ -119,128 +121,28 @@
         {{number-error number=numberOfEmployees}}
       </div>
     </div>
+
     <div class="form__group form__group--large">
       <label class="form__group__label">
         <span class="step-no">5</span>
         Sum insured for Public Liability:
       </label>
-      <div {{bind-attr class=":form__control isPublicLiabilityValid:form__control--invalid :clearfix"}}>
-        <div class="form__control">
-          <div class="btn-group radio-btn-group radio-btn-group--sixth">
-            {{#btn-group-radio-input groupValue=publicLiability value=0}}
-              <span class="btn__title">
-                £0
-              </span>
-              <span class="btn__msg ss-delete"></span>
-            {{/btn-group-radio-input}}
-            {{#btn-group-radio-input groupValue=publicLiability value=250000}}
-              <span class="btn__title">
-                £250k
-              </span>
-              <span class="btn__msg ss-delete"></span>
-            {{/btn-group-radio-input}}
-            {{#btn-group-radio-input groupValue=publicLiability value=500000}}
-              <span class="btn__title">
-                £500k
-              </span>
-              <span class="btn__msg ss-delete"></span>
-            {{/btn-group-radio-input}}
-            {{#btn-group-radio-input groupValue=publicLiability value=1000000}}
-              <span class="btn__title">
-                £1m
-              </span>
-              <span class="btn__msg ss-delete"></span>
-            {{/btn-group-radio-input}}
-            {{#btn-group-radio-input groupValue=publicLiability value=2000000}}
-              <span class="btn__title">
-                £2m
-              </span>
-              <span class="btn__msg ss-delete"></span>
-            {{/btn-group-radio-input}}
-            {{#btn-group-radio-input groupValue=publicLiability value=5000000}}
-              <span class="btn__title">
-                £5m
-              </span>
-              <span class="btn__msg ss-delete"></span>
-            {{/btn-group-radio-input}}
-          </div>
-        </div>
-        {{number-error number=publicLiability}}
-      </div>
+      {{partial "form-inputs/public-liability"}}
     </div>
+
     <div class="form__group">
       <label class="form__group__label">
         <span class="step-no">6</span>
         Sum insured for Employers Liability:
       </label>
-      <div {{bind-attr class=":form__control isEmployersLiabilityValid:form__control--invalid :clearfix"}}>
-        <div class="btn-group radio-btn-group radio-btn-group--half">
-          {{#btn-group-radio-input groupValue=employersLiability value=5000000}}
-            <span class="btn__title">
-              £5 million
-            </span>
-            <span class="btn__msg ss-delete"></span>
-          {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=employersLiability value=10000000}}
-            <span class="btn__title">
-              £10 million
-            </span>
-            <span class="btn__msg ss-delete"></span>
-          {{/btn-group-radio-input}}
-        </div>
-      </div>
+      {{partial "form-inputs/employers-liability"}}
     </div>
     <div class="form__group form__group--large">
       <label class="form__group__label">
         <span class="step-no">7</span>
         Sum insured for Professional Indemnity:
       </label>
-      <div {{bind-attr class=":form__control isProfessionalIndemnityValid:form__control--invalid :clearfix"}}>
-        <div class="btn-group radio-btn-group radio-btn-group--seventh">
-          {{#btn-group-radio-input groupValue=professionalIndemnity value=0}}
-            <span class="btn__title">
-              £0
-            </span>
-            <span class="btn__msg ss-delete"></span>
-          {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=professionalIndemnity value=100000}}
-            <span class="btn__title">
-              £100k
-            </span>
-            <span class="btn__msg ss-delete"></span>
-          {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=professionalIndemnity value=250000}}
-            <span class="btn__title">
-              £250k
-            </span>
-            <span class="btn__msg ss-delete"></span>
-          {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=professionalIndemnity value=500000}}
-            <span class="btn__title">
-              £500k
-            </span>
-            <span class="btn__msg ss-delete"></span>
-          {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=professionalIndemnity value=1000000}}
-            <span class="btn__title">
-              £1m
-            </span>
-            <span class="btn__msg ss-delete"></span>
-          {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=professionalIndemnity value=2000000}}
-            <span class="btn__title">
-              £2m
-            </span>
-            <span class="btn__msg ss-delete"></span>
-          {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=professionalIndemnity value=5000000}}
-            <span class="btn__title">
-              £5m
-            </span>
-            <span class="btn__msg ss-delete"></span>
-          {{/btn-group-radio-input}}
-        </div>
-      </div>
+      {{partial "form-inputs/professional-indemnity"}}
     </div>
 
     <div class="form__group form__group--large">

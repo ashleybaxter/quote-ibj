@@ -3,51 +3,23 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-
         Sum insured for Public Liability:
       </label>
-      <div class="form__control clearfix">
-        <div class="form__control__left">
-          <div class="input-price">£</div>
-          {{input type="text" value=publicLiability placeholder="Amount"}}
-        </div>
-        <div class="form__control__right">
-          {{input type="range" class="input-range" value=publicLiability min=0 max=1000000 step=10000}}
-        </div>
-        {{number-error number=publicLiability}}
-      </div>
+      {{partial "form-inputs/public-liability"}}
     </div>
+
     <div class="form__group form__group--large">
       <label class="form__group__label">
-
         Sum insured for Employers Liability:
       </label>
-      <div class="form__control clearfix">
-        <div class="form__control__left">
-          <div class="input-price">£</div>
-          {{input type="text" value=employersLiability placeholder="Amount"}}
-        </div>
-        <div class="form__control__right">
-          {{input type="range" value=employersLiability min=0 max=1000000 step=10000}}
-        </div>
-        {{number-error number=employersLiability}}
-      </div>
+      {{partial "form-inputs/employers-liability"}}
     </div>
+
     <div class="form__group form__group--large">
       <label class="form__group__label">
-
         Sum insured for Professional Indemnity:
       </label>
-      <div class="form__control clearfix">
-        <div class="form__control__left">
-          <div class="input-price">£</div>
-          {{input type="text" value=professionalIndemnity placeholder="Amount"}}
-        </div>
-        <div class="form__control__right">
-          {{input type="range" value=professionalIndemnity min=0 max=1000000 step=10000}}
-        </div>
-        {{number-error number=professionalIndemnity}}
-      </div>
+      {{partial "form-inputs/professional-indemnity"}}
     </div>
 
     <div class="form__group form__group--large">

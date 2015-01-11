@@ -1,0 +1,46 @@
+<div {{bind-attr class=":form__control isProfessionalIndemnityValid:form__control--invalid :clearfix"}}>
+  <div class="btn-group radio-btn-group radio-btn-group--seventh">
+    {{#btn-group-radio-input groupValue=professionalIndemnity value=0}}
+    <span class="btn__title">
+      £0
+    </span>
+    <span class="btn__msg ss-delete"></span>
+    {{/btn-group-radio-input}}
+    {{#btn-group-radio-input groupValue=professionalIndemnity value=100000}}
+    <span class="btn__title">
+      £100k
+    </span>
+    <span class="btn__msg ss-delete"></span>
+    {{/btn-group-radio-input}}
+    {{#btn-group-radio-input groupValue=professionalIndemnity value=250000}}
+    <span class="btn__title">
+      £250k
+    </span>
+    <span class="btn__msg ss-delete"></span>
+    {{/btn-group-radio-input}}
+    {{#btn-group-radio-input groupValue=professionalIndemnity value=500000}}
+    <span class="btn__title">
+      £500k
+    </span>
+    <span class="btn__msg ss-delete"></span>
+    {{/btn-group-radio-input}}
+    {{#btn-group-radio-input groupValue=professionalIndemnity value=1000000}}
+    <span class="btn__title">
+      £1m
+    </span>
+    <span class="btn__msg ss-delete"></span>
+    {{/btn-group-radio-input}}
+    {{#btn-group-radio-input groupValue=professionalIndemnity value=2000000}}
+    <span class="btn__title">
+      £2m
+    </span>
+    <span class="btn__msg ss-delete"></span>
+    {{/btn-group-radio-input}}
+    {{#btn-group-radio-input groupValue=professionalIndemnity value=5000000}}
+    <span class="btn__title">
+      £5m
+    </span>
+    <span class="btn__msg ss-delete"></span>
+    {{/btn-group-radio-input}}
+  </div>
+</div>

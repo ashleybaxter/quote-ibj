@@ -1,0 +1,16 @@
+<div {{bind-attr class=":form__control isEmployersLiabilityValid:form__control--invalid :clearfix"}}>
+  <div class="btn-group radio-btn-group radio-btn-group--half">
+    {{#btn-group-radio-input groupValue=employersLiability value=5000000}}
+    <span class="btn__title">
+      £5 million
+    </span>
+    <span class="btn__msg ss-delete"></span>
+    {{/btn-group-radio-input}}
+    {{#btn-group-radio-input groupValue=employersLiability value=10000000}}
+    <span class="btn__title">
+      £10 million
+    </span>
+    <span class="btn__msg ss-delete"></span>
+    {{/btn-group-radio-input}}
+  </div>
+</div>
