@@ -2,7 +2,11 @@
     <tr>
       <td class="estimate-table__price">Anual price including insurance premium Tax (IPT)</td>
       <td>
-        <h2>{{format-currency quoteTotal}}</h2>
+        <h2>
+          {{#if quoteTotal}}
+            {{format-currency quoteTotal}}
+          {{else}}-{{/if}}
+        </h2>
       </td>
     </tr>
     <tr>
@@ -11,7 +15,7 @@
         {{#if publicLiability}}
           {{format-currency publicLiability}}
         {{else}}
-        Not included
+          Not included
         {{/if}}
       </td>
     </tr>

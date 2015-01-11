@@ -94,12 +94,19 @@ export default Ember.Object.extend({
   }.property('equipmentReplacementCost'),
 
   quoteTotal: function () {
-    return this.get('publicLiabilityQuote') +
-           this.get('employersLiabilityQuote') +
-           this.get('professionalIndemnityQuote') +
-           this.get('legalExpensesQuote') +
-           this.get('buildingCoverQuote') +
-           this.get('equipmentCoverQuote');
+    var total;
+    total = this.get('publicLiabilityQuote') +
+            this.get('employersLiabilityQuote') +
+            this.get('professionalIndemnityQuote') +
+            this.get('legalExpensesQuote') +
+            this.get('buildingCoverQuote') +
+            this.get('equipmentCoverQuote');
+
+    if (isNaN(total)) {
+      return 0;
+    } else {
+      return total;
+    }
   }.property(
     'publicLiabilityQuote',
     'employersLiabilityQuote',
