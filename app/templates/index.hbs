@@ -135,20 +135,39 @@
         {{number-error number=publicLiability}}
       </div>
     </div>
-    <div class="form__group form__group--large">
+    <div class="form__group">
       <label class="form__group__label">
         <span class="step-no">6</span>
         Sum insured for Employers Liability:
       </label>
       <div {{bind-attr class=":form__control isEmployersLiabilityValid:form__control--invalid :clearfix"}}>
-        <div class="form__control__left">
-          <div class="input-price">£</div>
-          {{input type="text" value=employersLiability placeholder="Amount"}}
+        <div class="btn-group radio-btn-group radio-btn-group--fifth">
+          {{#btn-group-radio-input groupValue=employersLiability value=0}}
+            <span class="btn__title">
+              £0
+            </span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=employersLiability value=250000}}
+            <span class="btn__title">
+              £250k
+            </span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=employersLiability value=500000}}
+            <span class="btn__title">
+              £500k
+            </span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=employersLiability value=1000000}}
+            <span class="btn__title">
+              £1m
+            </span>
+          {{/btn-group-radio-input}}
+          {{#btn-group-radio-input groupValue=employersLiability value=2000000}}
+            <span class="btn__title">
+              £2m
+            </span>
+          {{/btn-group-radio-input}}
         </div>
-        <div class="form__control__right">
-          {{input type="range" value=employersLiability min=0 max=1000000 step=10000}}
-        </div>
-        {{number-error number=employersLiability}}
       </div>
     </div>
     <div class="form__group form__group--large">

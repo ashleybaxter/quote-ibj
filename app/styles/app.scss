@@ -249,12 +249,16 @@ p {
     }
   }
 }
+.radio-btn-group--fifth {
+  .btn {
+    width: 20%;
+  }
+}
 .radio-btn-group--third {
   .btn {
     width: 33.333%;
   }
 }
-
 .radio-btn-group--half {
   .btn {
     width: 50%;
