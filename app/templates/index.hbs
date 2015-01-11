@@ -278,83 +278,18 @@
   </form>
   <div class="content__footer clearfix">
     <button {{bind-attr class=":btn isEstimateValid::btn--inactive"}} {{action 'save'}}>
-      View my quote
+      Happy with everything? Apply
       <i class="ss-navigateright"></i>
     </button>
   </div>
 </section>
 
 
+
 <section class="content content--left content--container content--fixed">
   <h1>Get a Quote</h1>
   <p class="margin-bottom-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
   <hr>
-  <table class="estimate-table">
-    <tr>
-      <td class="estimate-table__price">Anual price including insurance premium Tax (IPT)</td>
-      <td>
-        <h2>{{format-currency quoteTotal}}</h2>
-      </td>
-    </tr>
-    <tr>
-      <td class="estimate-table__price">Public liability</td>
-      <td>
-        {{#if publicLiability}}
-          {{format-currency publicLiability}}
-        {{else}}
-        Not included
-        {{/if}}
-      </td>
-    </tr>
-    <tr>
-      <td class="estimate-table__price">Employers liability</td>
-      <td>
-        {{#if employersLiability}}
-          {{format-currency employersLiability}}
-        {{else}}
-          Not included
-        {{/if}}
-      </td>
-    </tr>
-    <tr>
-      <td class="estimate-table__price">Professional indemnity</td>
-      <td>
-        {{#if professionalIndemnity}}
-          {{format-currency professionalIndemnity}}
-        {{else}}
-          Not included
-        {{/if}}
-      </td>
-    </tr>
-    <tr>
-      <td class="estimate-table__price">Legal Expenses</td>
-      <td>
-        {{#if hasLegalExpenseCover}}
-          {{format-currency 100000}}
-        {{else}}
-          Not included
-        {{/if}}
-      </td>
-    </tr>
-    <tr>
-      <td class="estimate-table__price">Building Cover</td>
-      <td>
-        {{#if hasBuildingCover}}
-          {{format-currency buildingRebuildCost}}
-        {{else}}
-          Not included
-        {{/if}}
-      </td>
-    </tr>
-    <tr>
-      <td class="estimate-table__price">Equipment Cover</td>
-      <td>
-        {{#if hasEquipmentCover}}
-          {{format-currency equipmentReplacementCost}}
-        {{else}}
-          Not included
-        {{/if}}
-      </td>
-    </tr>
-  </table>
+  {{#quote-table}}
+  {{/quote-table}}
 </section>

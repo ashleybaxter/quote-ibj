@@ -1,14 +1,5 @@
-<section class="content progress">
-  <ul class="clearfix">
-    <li class="complete">{{#link-to 'step-1'}}1{{/link-to}}</li>
-    <li class="complete">{{#link-to 'step-2'}}2{{/link-to}}</li>
-    <li class="complete">{{#link-to 'step-3'}}3{{/link-to}}</li>
-    <li class="active"><span>4</span></li>
-  </ul>
-</section>
-<section class="content">
+<section class="content content--right">
   <form class="form">
-    <h3>Please choose the covers you need</h3>
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
@@ -174,4 +165,13 @@
       <i class="ss-navigateright"></i>
     </button>
   </div>
+</section>
+
+
+<section class="content content--left content--container content--fixed">
+  <h3><strong>Step 4:</strong> Please choose the covers you need</h3> 
+  <p class="margin-bottom-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <hr>
+  {{#quote-table}}
+  {{/quote-table}}
 </section>

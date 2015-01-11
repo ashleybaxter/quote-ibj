@@ -1,14 +1,5 @@
-<section class="content progress">
-  <ul class="clearfix">
-    <li class="complete">{{#link-to 'step-1'}}1{{/link-to}}</li>
-    <li class="active"><span>2</span></li>
-    <li><span>3</span></li>
-    <li><span>4</span></li>
-  </ul>
-</section>
-<section class="content">
+<section class="content content--right">
   <form class="form">
-    <h3>Tell us about your employees</h3>
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
@@ -79,4 +70,13 @@
       <i class="ss-navigateright"></i>
     </button>
   </div>
+</section>
+
+
+<section class="content content--left content--container content--fixed">
+  <h3><strong>Step 2:</strong> Tell us about your employees</h3> 
+  <p class="margin-bottom-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <hr>
+  {{#quote-table}}
+  {{/quote-table}}
 </section>

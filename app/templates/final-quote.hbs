@@ -1,81 +1,5 @@
-<section class="content content--left content--container">
-  <h1>Title for final quote here</h1>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-  <table class="estimate-table">
-    <tr>
-      <td class="estimate-table__price">Anual price including insurance premium Tax (IPT)</td>
-      <td>
-        <h2>{{format-currency quoteTotal}}</h2>
-      </td>
-    </tr>
-    <tr>
-      <td class="estimate-table__price">Public liability</td>
-      <td>
-        {{#if publicLiability}}
-          {{format-currency publicLiability}}
-        {{else}}
-        Not included
-        {{/if}}
-      </td>
-    </tr>
-    <tr>
-      <td class="estimate-table__price">Employers liability</td>
-      <td>
-        {{#if employersLiability}}
-          {{format-currency employersLiability}}
-        {{else}}
-          Not included
-        {{/if}}
-      </td>
-    </tr>
-    <tr>
-      <td class="estimate-table__price">Professional indemnity</td>
-      <td>
-        {{#if professionalIndemnity}}
-          {{format-currency professionalIndemnity}}
-        {{else}}
-          Not included
-        {{/if}}
-      </td>
-    </tr>
-    <tr>
-      <td class="estimate-table__price">Legal Expenses</td>
-      <td>
-        {{#if hasLegalExpenseCover}}
-          {{format-currency 100000}}
-        {{else}}
-          Not included
-        {{/if}}
-      </td>
-    </tr>
-    <tr>
-      <td class="estimate-table__price">Building Cover</td>
-      <td>
-        {{#if hasBuildingCover}}
-          {{format-currency buildingRebuildCost}}
-        {{else}}
-          Not included
-        {{/if}}
-      </td>
-    </tr>
-    <tr>
-      <td class="estimate-table__price">Equipment Cover</td>
-      <td>
-        {{#if hasEquipmentCover}}
-          {{format-currency equipmentReplacementCost}}
-        {{else}}
-          Not included
-        {{/if}}
-      </td>
-    </tr>
-  </table>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-</section>
-
-
-<section class="content content--right">
+<section class="content content--small content--right">
   <form class="form">
-    <h3>Pay</h3>
     <div class="form__group form__group--large">
       <label class="form__group__label">
         Card Number
@@ -110,4 +34,13 @@
       <i class="ss-lock"></i>
     {{/link-to}}
   </div>
+</section>
+
+
+<section class="content content--left content--container content--fixed">
+  <h3>Pay</h3>
+  <p class="margin-bottom-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <hr>
+  {{#quote-table}}
+  {{/quote-table}}
 </section>

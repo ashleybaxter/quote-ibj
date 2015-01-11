@@ -1,14 +1,5 @@
-<section class="content progress">
-  <ul class="clearfix">
-    <li class="active"><span>1</span></li>
-    <li><span>2</span></li>
-    <li><span>3</span></li>
-    <li><span>4</span></li>
-  </ul>
-</section>
-<section class="content">
+<section class="content content--right">
   <form class="form">
-    <h3>Please tell us about your business</h3>
     <div class="form__group">
       <label class="form__group__label">
         Occupation:
@@ -174,4 +165,12 @@
       <i class="ss-navigateright"></i>
     </button>
   </div>
+</section>
+
+<section class="content content--left content--container content--fixed">
+  <h3><strong>Step 1:</strong> Please tell us about your business</h3> 
+  <p class="margin-bottom-20">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+  <hr>
+  {{#quote-table}}
+  {{/quote-table}}
 </section>
