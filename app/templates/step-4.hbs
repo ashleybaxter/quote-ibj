@@ -8,6 +8,7 @@
       {{partial "form-inputs/public-liability"}}
     </div>
 
+    {{#if requiresEmployersLiability}}
     <div class="form__group form__group--large">
       <label class="form__group__label">
         Sum insured for Employers Liability:
@@ -30,6 +31,7 @@
       </div>
       {{number-error number=employeeWagesPaid}}
     </div>
+    {{/if}}
 
     <div class="form__group form__group--large">
       <label class="form__group__label">

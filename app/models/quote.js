@@ -51,6 +51,10 @@ export default Ember.Object.extend({
   hasSignificantLossPossibility: null,
 
 
+  requiresEmployersLiability: function () {
+    return this.get('businessType') !== 'sole trader';
+  }.property('businessType'),
+
 
   publicLiabilityQuote: function () {
     var publicLiability = parseInt(this.get('publicLiability'));
@@ -217,14 +221,22 @@ export default Ember.Object.extend({
 
 
   isEstimateValid: function () {
+    var isEmployersLiabilityValid;
+
+    if (this.get('requiresEmployersLiability')) {
+      isEmployersLiabilityValid = this.get('isEmployeeWagesPaidValid') &&
+          this.get('isEmployersLiabilityValid') &&
+          this.get('isNumberOfEmployeesValid');
+    } else {
+      isEmployersLiabilityValid = true;
+    }
+
     return this.get('isOccupationValid') &&
         !isBlank(this.get('experience')) &&
         !isBlank(this.get('businessType')) &&
         this.get('isPublicLiabilityValid') &&
-        this.get('isEmployersLiabilityValid') &&
-        this.get('isEmployeeWagesPaidValid') &&
+        isEmployersLiabilityValid &&
         this.get('isProfessionalIndemnityValid') &&
-        this.get('isNumberOfEmployeesValid') &&
         !isBlank(this.get('hasLegalExpenseCover')) &&
         this.get('isBuildingCoverValid') &&
         this.get('isEquipmentCoverValid');
@@ -233,6 +245,7 @@ export default Ember.Object.extend({
     'experience',
     'businessType',
     'isPublicLiabilityValid',
+    'requiresEmployersLiability',
     'isEmployersLiabilityValid',
     'isEmployeeWagesPaidValid',
     'isProfessionalIndemnityValid',
@@ -277,14 +290,23 @@ export default Ember.Object.extend({
     'phoneNumber'),
 
   isStep4Valid: function () {
+    var isEmployersLiabilityValid;
+
+    if (this.get('requiresEmployersLiability')) {
+      isEmployersLiabilityValid = this.get('isEmployeeWagesPaidValid') &&
+          this.get('isEmployersLiabilityValid');
+    } else {
+      isEmployersLiabilityValid = true;
+    }
+
     return this.get('isPublicLiabilityValid') &&
-        this.get('isEmployersLiabilityValid') &&
-        this.get('isEmployeeWagesPaidValid') &&
+        isEmployersLiabilityValid &&
         this.get('isProfessionalIndemnityValid') &&
         !isBlank(this.get('hasLegalExpenseCover')) &&
         this.get('isBuildingCoverValid') &&
         this.get('isEquipmentCoverValid');
   }.property(
+    'requiresEmployersLiability',
     'isPublicLiabilityValid',
     'isEmployersLiabilityValid',
     'isEmployeeWagesPaidValid',

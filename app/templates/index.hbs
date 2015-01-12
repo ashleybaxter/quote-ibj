@@ -85,19 +85,19 @@
       </label>
       <div class="form__control">
         <div class="radio-btn-group">
-          {{#btn-group-radio-input groupValue=businessType value="one" classNames="btn--large"}}
+          {{#btn-group-radio-input groupValue=businessType value="sole trader" classNames="btn--large"}}
             <span class="btn__title">
               <i class="ss-home"></i>
               Sole Trader
             </span>
           {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=businessType value="two" classNames="btn--large"}}
+          {{#btn-group-radio-input groupValue=businessType value="partnership" classNames="btn--large"}}
             <span class="btn__title">
               <i class="ss-school"></i>
               Partnership
             </span>
           {{/btn-group-radio-input}}
-          {{#btn-group-radio-input groupValue=businessType value="three" classNames="btn--large"}}
+          {{#btn-group-radio-input groupValue=businessType value="limited company" classNames="btn--large"}}
             <span class="btn__title">
               <i class="ss-castle"></i>
               Limited Company
@@ -107,6 +107,7 @@
       </div>
     </div>
 
+    {{#if requiresEmployersLiability}}
     <div class="form__group form__group--large">
       <label class="form__group__label form__group--step">
         How many employees do you have?
@@ -117,6 +118,7 @@
         {{number-error number=numberOfEmployees}}
       </div>
     </div>
+    {{/if}}
 
     <div class="form__group form__group--large">
       <label class="form__group__label form__group--step">
@@ -125,6 +127,7 @@
       {{partial "form-inputs/public-liability"}}
     </div>
 
+    {{#if requiresEmployersLiability}}
     <div class="form__group">
       <label class="form__group__label form__group--step">
         Sum insured for Employers Liability:
@@ -147,6 +150,7 @@
       </div>
       {{number-error number=employeeWagesPaid}}
     </div>
+    {{/if}}
 
     <div class="form__group form__group--large">
       <label class="form__group__label form__group--step">
