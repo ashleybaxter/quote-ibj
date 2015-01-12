@@ -1,6 +1,6 @@
 <table class="estimate-table">
     <tr>
-      <td class="estimate-table__price">Anual price including insurance premium Tax (IPT)</td>
+      <td class="estimate-table__price">Annual price including insurance premium Tax (IPT)</td>
       <td>
         <h2>
           {{#if quoteTotal}}
@@ -22,7 +22,7 @@
     <tr>
       <td class="estimate-table__price">Employers liability</td>
       <td>
-        {{#if employersLiability}}
+        {{#if hasEmployersLiability}}
           {{format-currency employersLiability}}
         {{else}}
           Not included

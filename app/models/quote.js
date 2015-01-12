@@ -55,6 +55,12 @@ export default Ember.Object.extend({
     return this.get('businessType') !== 'sole trader';
   }.property('businessType'),
 
+  hasEmployersLiability: function () {
+    var liability = this.get('employersLiability');
+    return this.get('requiresEmployersLiability') &&
+        !Ember.isBlank(liability) && liability > 0;
+  }.property('requiresEmployersLiability', 'employersLiability'),
+
 
   publicLiabilityQuote: function () {
     var publicLiability = parseInt(this.get('publicLiability'));
@@ -62,10 +68,14 @@ export default Ember.Object.extend({
   }.property('publicLiability'),
 
   employersLiabilityQuote: function () {
-    var employersLiability = parseInt(this.get('employersLiability'));
-    var numberOfEmployees = parseInt(this.get('numberOfEmployees'));
-    return 1.0 * (employersLiability / 1000) * numberOfEmployees;
-  }.property('employersLiability', 'numberOfEmployees'),
+    if (this.get('requiresEmployersLiability')) {
+      var employersLiability = parseInt(this.get('employersLiability'));
+      var numberOfEmployees = parseInt(this.get('numberOfEmployees'));
+      return 1.0 * (employersLiability / 1000) * numberOfEmployees;
+    } else {
+      return 0;
+    }
+  }.property('employersLiability', 'numberOfEmployees', 'requiresEmployersLiability'),
 
   professionalIndemnityQuote: function () {
     var professionalIndemnity = parseInt(this.get('professionalIndemnity'));
