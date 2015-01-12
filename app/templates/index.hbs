@@ -2,8 +2,7 @@
   <form class="form">
 
     <div class="form__group">
-      <label class="form__group__label">
-        <span class="step-no">1</span>
+      <label class="form__group__label form__group--step">
         Occupation:
       </label>
       <div class="form__control">
@@ -43,8 +42,7 @@
     </div>
 
     <div class="form__group">
-      <label class="form__group__label">
-        <span class="step-no">2</span>
+      <label class="form__group__label form__group--step">
         Experience:
       </label>
       <div class="form__control">
@@ -82,8 +80,7 @@
     </div>
 
     <div class="form__group form__group--large">
-      <label class="form__group__label">
-        <span class="step-no">3</span>
+      <label class="form__group__label form__group--step">
         Business Type:
       </label>
       <div class="form__control">
@@ -111,8 +108,7 @@
     </div>
 
     <div class="form__group form__group--large">
-      <label class="form__group__label">
-        <span class="step-no">4</span>
+      <label class="form__group__label form__group--step">
         How many employees do you have?
       </label>
       <div {{bind-attr class=":form__control isNumberOfEmployeesValid:form__control--invalid"}}>
@@ -123,16 +119,14 @@
     </div>
 
     <div class="form__group form__group--large">
-      <label class="form__group__label">
-        <span class="step-no">5</span>
+      <label class="form__group__label form__group--step">
         Sum insured for Public Liability:
       </label>
       {{partial "form-inputs/public-liability"}}
     </div>
 
     <div class="form__group">
-      <label class="form__group__label">
-        <span class="step-no">6</span>
+      <label class="form__group__label form__group--step">
         Sum insured for Employers Liability:
       </label>
       {{partial "form-inputs/employers-liability"}}
@@ -155,16 +149,14 @@
     </div>
 
     <div class="form__group form__group--large">
-      <label class="form__group__label">
-        <span class="step-no">7</span>
+      <label class="form__group__label form__group--step">
         Sum insured for Professional Indemnity:
       </label>
       {{partial "form-inputs/professional-indemnity"}}
     </div>
 
     <div class="form__group form__group--large">
-      <label class="form__group__label">
-      <span class="step-no">8</span>
+      <label class="form__group__label form__group--step">
         Legal Expenses
       </label>
       <div class="form__control">
@@ -186,8 +178,7 @@
     </div>
 
     <div class="form__group form__group--large">
-      <label class="form__group__label">
-      <span class="step-no">9</span>
+      <label class="form__group__label form__group--step">
         Building
       </label>
       <div class="form__control">
@@ -228,8 +219,7 @@
     {{/if}}
 
     <div class="form__group form__group--large">
-      <label class="form__group__label">
-      <span class="step-no">10</span>
+      <label class="form__group__label form__group--step">
         Business / Office Equipment
       </label>
       <div class="form__control">
