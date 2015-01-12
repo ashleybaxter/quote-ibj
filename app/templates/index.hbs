@@ -137,6 +137,23 @@
       </label>
       {{partial "form-inputs/employers-liability"}}
     </div>
+
+    <div class="form__group">
+      <label class="form__group__label">
+        Wages Paid
+      </label>
+      <div {{bind-attr class=":form__control isEmployeeWagesPaidValid:form__control--invalid :clearfix"}}>
+        <div class="form__control__left">
+          <div class="input-price">£</div>
+          {{input type="text" value=employeeWagesPaid placeholder="Amount"}}
+        </div>
+        <div class="form__control__right">
+          {{input type="range" value=employeeWagesPaid min=0 max=1000000 step=100000}}
+        </div>
+      </div>
+      {{number-error number=employeeWagesPaid}}
+    </div>
+
     <div class="form__group form__group--large">
       <label class="form__group__label">
         <span class="step-no">7</span>

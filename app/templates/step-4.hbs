@@ -15,6 +15,22 @@
       {{partial "form-inputs/employers-liability"}}
     </div>
 
+    <div class="form__group">
+      <label class="form__group__label">
+        Wages Paid
+      </label>
+      <div {{bind-attr class=":form__control isEmployeeWagesPaidValid:form__control--invalid :clearfix"}}>
+        <div class="form__control__left">
+          <div class="input-price">£</div>
+          {{input type="text" value=employeeWagesPaid placeholder="Amount"}}
+        </div>
+        <div class="form__control__right">
+          {{input type="range" value=employeeWagesPaid min=0 max=1000000 step=100000}}
+        </div>
+      </div>
+      {{number-error number=employeeWagesPaid}}
+    </div>
+
     <div class="form__group form__group--large">
       <label class="form__group__label">
         Sum insured for Professional Indemnity:
@@ -24,7 +40,6 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-
         Legal Expenses
       </label>
       <div class="form__control">
@@ -47,7 +62,6 @@
 
     <div class="form__group form__group--large">
       <label class="form__group__label">
-
         Building
       </label>
       <div class="form__control">
@@ -71,7 +85,6 @@
     {{#if hasBuildingCover}}
       <div class="form__group form__group--large">
         <label class="form__group__label">
-
           Select how much it would cost to rebuild your property from scratch
         </label>
         <div {{bind-attr class=":form__control isBuildingRebuildCostsValid:form__control--invalid :clearfix"}}>
@@ -113,7 +126,6 @@
     {{#if hasEquipmentCover}}
       <div class="form__group form__group--large">
         <label class="form__group__label">
-
           Select how much it would cost to replace all of your business / office equipment.
         </label>
         <div {{bind-attr class=":form__control isOfficeCostsValid:form__control--invalid :clearfix"}}>

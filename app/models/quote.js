@@ -22,6 +22,7 @@ export default Ember.Object.extend({
   publicLiability: null,
   numberOfEmployees: null,
   employersLiability: null,
+  employeeWagesPaid: null,
   professionalIndemnity: null,
   businessPostcode: null,
   turnover: null,
@@ -148,6 +149,11 @@ export default Ember.Object.extend({
     return !isBlank(number) && isNumber(number);
   }.property('employersLiability'),
 
+  isEmployeeWagesPaidValid: function () {
+    var number = this.get('employeeWagesPaid');
+    return !isBlank(number) && isNumber(number);
+  }.property('employeeWagesPaid'),
+
   isProfessionalIndemnityValid: function () {
     var number = this.get('professionalIndemnity');
     return !isBlank(number) && isNumber(number);
@@ -216,6 +222,7 @@ export default Ember.Object.extend({
         !isBlank(this.get('businessType')) &&
         this.get('isPublicLiabilityValid') &&
         this.get('isEmployersLiabilityValid') &&
+        this.get('isEmployeeWagesPaidValid') &&
         this.get('isProfessionalIndemnityValid') &&
         this.get('isNumberOfEmployeesValid') &&
         !isBlank(this.get('hasLegalExpenseCover')) &&
@@ -227,6 +234,7 @@ export default Ember.Object.extend({
     'businessType',
     'isPublicLiabilityValid',
     'isEmployersLiabilityValid',
+    'isEmployeeWagesPaidValid',
     'isProfessionalIndemnityValid',
     'isNumberOfEmployeesValid',
     'hasLegalExpenseCover',
@@ -271,6 +279,7 @@ export default Ember.Object.extend({
   isStep4Valid: function () {
     return this.get('isPublicLiabilityValid') &&
         this.get('isEmployersLiabilityValid') &&
+        this.get('isEmployeeWagesPaidValid') &&
         this.get('isProfessionalIndemnityValid') &&
         !isBlank(this.get('hasLegalExpenseCover')) &&
         this.get('isBuildingCoverValid') &&
@@ -278,6 +287,7 @@ export default Ember.Object.extend({
   }.property(
     'isPublicLiabilityValid',
     'isEmployersLiabilityValid',
+    'isEmployeeWagesPaidValid',
     'isProfessionalIndemnityValid',
     'hasLegalExpenseCover',
     'isBuildingCoverValid',
