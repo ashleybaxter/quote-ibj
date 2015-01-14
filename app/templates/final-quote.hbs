@@ -6,16 +6,16 @@
       </label>
       <div {{bind-attr class=":form__control"}}>
         <div class="input-price"><i class="ss-creditcard"></i></div>
-        {{input type="text" value=name placeholder="Card Number"}}
+        {{input type="text" value=ccNumber placeholder="Card Number"}}
       </div>
     </div>
     <div class="form__group form__group--large">
       <label class="form__group__label">
-        Expirery date
+        Expiry date
       </label>
       <div {{bind-attr class=":form__control"}}>
         <div class="input-price"><i class="ss-creditcard"></i></div>
-        {{input type="text" value=email placeholder="MM/YY"}}
+        {{input type="text" value=ccExpiry placeholder="MM/YY"}}
       </div>
     </div>
     <div class="form__group form__group--large">
@@ -24,15 +24,15 @@
       </label>
       <div {{bind-attr class=":form__control"}}>
         <div class="input-price"><i class="ss-creditcard"></i></div>
-        {{input type="text" value=phoneNumber placeholder="CSV"}}
+        {{input type="text" value=ccCSV placeholder="CSV"}}
       </div>
     </div>
   </form>
   <div class="content__footer clearfix">
-    {{#link-to 'step-1' class="btn"}}
+    <button {{bind-attr class=":btn isPaymentValid::btn--inactive"}} {{action 'pay'}} class="btn">
       Pay {{format-currency quoteTotal}} Securely
       <i class="ss-lock"></i>
-    {{/link-to}}
+    </button>
   </div>
 </section>
 

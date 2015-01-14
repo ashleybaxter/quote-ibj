@@ -50,6 +50,10 @@ export default Ember.Object.extend({
 
   hasSignificantLossPossibility: null,
 
+  ccNumber: null,
+  ccExpiry: null,
+  ccCSV: null,
+
 
   requiresEmployersLiability: function () {
     return this.get('businessType') !== 'sole trader';
@@ -324,5 +328,15 @@ export default Ember.Object.extend({
     'hasLegalExpenseCover',
     'isBuildingCoverValid',
     'isEquipmentCoverValid'),
+
+  isPaymentValid: function () {
+    return !isBlank(this.get('ccNumber')) &&
+        !isBlank(this.get('ccExpiry')) &&
+        !isBlank(this.get('ccCSV'));
+  }.property(
+    'ccNumber',
+    'ccExpiry',
+    'ccCSV'
+  )
 
 });
