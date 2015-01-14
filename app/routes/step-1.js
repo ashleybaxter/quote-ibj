@@ -6,7 +6,11 @@ export default Ember.Route.extend({
       if (!this.controller.get('isStep1Valid')) {
         alert("Please fill in all fields before continuing");
       } else {
-        this.transitionTo('step-2');
+        if (this.controller.get('requiresEmployersLiability')) {
+          this.transitionTo('step-2');
+        } else {
+          this.transitionTo('step-3');
+        }
       }
     }
   }
